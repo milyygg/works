@@ -883,3 +883,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .section-head { margin-bottom: 40px; }
 }
+/* Keep the contact columns inside narrow mobile viewports. */
+.cta__content,.cta__form{min-width:0}
+@media(max-width:360px){.cta__title{font-size:32px}.cta__form{padding:24px 16px}.cta__form .btn{white-space:normal}}
