@@ -1,0 +1,90 @@
+[
+  {
+    "id": "product-cards",
+    "title": "Карточки товаров",
+    "images": [
+      {
+        "title": "Микрофон",
+        "image": "assets/graphics/card-microphone-2026.png"
+      },
+      {
+        "title": "Наушники",
+        "image": "assets/graphics/card-headphones-2026.png"
+      },
+      {
+        "title": "Кувшин",
+        "image": "assets/graphics/card-pitcher-2026.png"
+      },
+      {
+        "title": "Носки",
+        "image": "assets/graphics/card-socks-2026.png"
+      },
+      {
+        "title": "Солнцезащитный крем",
+        "image": "assets/graphics/card-sunscreen-2026.png"
+      },
+      {
+        "title": "Микрофон - ранний вариант",
+        "image": "assets/graphics/card-microphone.jpg"
+      },
+      {
+        "title": "Наушники - ранний вариант",
+        "image": "assets/graphics/card-headphones.jpg"
+      },
+      {
+        "title": "Кувшин - ранний вариант",
+        "image": "assets/graphics/card-pitcher.jpg"
+      },
+      {
+        "title": "Носки - ранний вариант",
+        "image": "assets/graphics/card-socks.jpg"
+      },
+      {
+        "title": "Солнцезащитный крем - ранний вариант",
+        "image": "assets/graphics/card-sunscreen.jpg"
+      },
+      {
+        "title": "Кувшин вариант-1",
+        "image": "assets/graphics/variant-1.png"
+      },
+      {
+        "title": "Кувшин вариант-2",
+        "image": "assets/graphics/variant-2.png"
+      },
+      {
+        "title": "Наушники вариант-1",
+        "image": "assets/graphics/variant-3.png"
+      },
+      {
+        "title": "Наушники вариант-2",
+        "image": "assets/graphics/variant-4.png"
+      },
+      {
+        "title": "Наушники вариант-3",
+        "image": "assets/graphics/variant-5.png"
+      }
+    ]
+  },
+  {
+    "id": "logos",
+    "title": "Логотипы",
+    "images": [
+      {
+        "title": "Nexus Cybernetics",
+        "image": "assets/graphics/logo-nexus.jpg"
+      },
+      {
+        "title": "Aura Botanica",
+        "image": "assets/graphics/logo-aura.jpg"
+      },
+      {
+        "title": "Find Me",
+        "image": "assets/graphics/logo-findme.jpg"
+      },
+      {
+        "title": "Online Store",
+        "image": "assets/graphics/logo-onlinestore.jpg"
+      }
+    ]
+  }
+]

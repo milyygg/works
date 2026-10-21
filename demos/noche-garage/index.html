@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Демонстрационная концепция вымышленной автостудии Noche Garage. Подсветка салона, детейлинг и автозвук. Иллюстрации созданы ИИ.">
+  <title>Noche Garage | Концепция автостудии</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+<header class="header">
+  <a class="brand" href="#home" aria-label="Noche Garage, главная"><svg viewBox="0 0 48 40" aria-hidden="true"><path d="M6 36V4h8l20 23V4h8v32h-8L14 13v23Z"/></svg><span>NOCHE GARAGE</span></a>
+  <nav aria-label="Главная навигация"><a href="#services">Услуги</a><a href="#gallery">Фото</a><a href="#contact">Контакты</a></nav>
+  <a class="header-action" href="#request">Обсудить проект <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main">
+  <section class="hero" id="home">
+    <div class="hero-image"><img src="assets/studio.webp" width="853" height="640" fetchpriority="high" alt="Салон автомобиля с синей и розовой контурной подсветкой, сгенерированная иллюстрация концепта"></div>
+    <div class="hero-copy"><p class="hero-place">Демонстрационная автостудия</p><p class="hero-statement">Ночь. Свет.<br>Ваш автомобиль.</p><p class="hero-description">Контурная подсветка, оклейка и детейлинг. Соберите свой вариант обновления автомобиля.</p><a class="button" href="#request">Обсудить проект <span aria-hidden="true">↗</span></a><a class="plain-link" href="#gallery">Посмотреть фотографии</a></div>
+    <h1>NOCHE GARAGE</h1>
+    <div class="hero-bottom"><span>Авторская концепция автостудии</span><a href="#demo-info">О проекте</a></div>
+  </section>
+  <section class="light-section section" id="gallery">
+    <div class="section-heading"><h2>Атмосфера<br>внутри</h2><p>Контурная подсветка подчёркивает линии салона. Звёздное небо добавляет свет на потолке. Выберите, что ближе вашему автомобилю.</p></div>
+    <div class="light-gallery">
+      <figure class="light-photo"><button class="photo-button" type="button" data-photo="assets/ambient.webp" data-caption="Контурная подсветка. Иллюстрация создана ИИ."><img src="assets/ambient.webp" width="1024" height="1024" loading="lazy" alt="Контурная подсветка дверей и центральной консоли"><span class="zoom" aria-hidden="true">↗</span></button><figcaption><h3>Контурная подсветка</h3><p>Двери, передняя панель, консоль и зона ног. Состав установки обсудим под вашу модель.</p><button class="text-button" data-select="Контурная подсветка">Выбрать подсветку <span aria-hidden="true">↗</span></button></figcaption></figure>
+      <figure class="light-photo stars"><button class="photo-button" type="button" data-photo="assets/stars.webp" data-caption="Звёздное небо. Иллюстрация создана ИИ."><img src="assets/stars.webp" width="1024" height="1024" loading="lazy" alt="Звёздный потолок и светлый салон автомобиля"><span class="zoom" aria-hidden="true">↗</span></button><figcaption><h3>Звёздное небо</h3><p>Точечный свет в обивке потолка. Цвет, плотность и варианты управления уточняются при подборе.</p><button class="text-button" data-select="Звёздное небо">Выбрать звёздное небо <span aria-hidden="true">↗</span></button></figcaption></figure>
+    </div>
+    <p class="image-note">Все изображения созданы ИИ для этого концепта. Они иллюстрируют направления услуг и не являются фотографиями выполненных заказов.</p>
+  </section>
+  <section class="services-section section" id="services">
+    <div class="section-heading"><h2>Не только<br>подсветка</h2><p>Внешний вид, комфорт и мультимедиа. Выберите направление, чтобы добавить его в запрос мастеру.</p></div>
+    <div class="services-layout">
+      <div class="service-photo"><img id="service-image" src="assets/wrap.webp" width="1024" height="1024" loading="lazy" alt="Нанесение защитной плёнки на кузов, сгенерированная иллюстрация"><p id="service-caption">Оклейка кузова. Иллюстрация создана ИИ.</p></div>
+      <div class="service-list">
+        <details open data-image="wrap" data-alt="Нанесение защитной плёнки на кузов, сгенерированная иллюстрация"><summary>Оклейка и антихром <span aria-hidden="true">+</span></summary><div class="service-content"><p>Защитная и виниловая плёнка, бронирование фар и оклейка хромированных элементов. Зоны защиты и материал подбираются под задачу.</p><button class="text-button" data-select="Оклейка и антихром">Добавить в запрос ↗</button></div></details>
+        <details data-image="polish" data-alt="Полировка кузова автомобиля, сгенерированная иллюстрация"><summary>Полировка и керамика <span aria-hidden="true">+</span></summary><div class="service-content"><p>Полировка кузова и нанесение керамического покрытия. Объём подготовки зависит от состояния лакокрасочного покрытия.</p><button class="text-button" data-select="Полировка и керамика">Добавить в запрос ↗</button></div></details>
+        <details data-image="quiet" data-alt="Шумоизоляция автомобильной двери, сгенерированная иллюстрация"><summary>Шумоизоляция <span aria-hidden="true">+</span></summary><div class="service-content"><p>Обработка дверей, арок, пола и других зон. Можно обсудить отдельный участок или комплексную работу.</p><button class="text-button" data-select="Шумоизоляция">Добавить в запрос ↗</button></div></details>
+        <details data-image="audio" data-alt="Мультимедийный экран в салоне, сгенерированная иллюстрация"><summary>Автозвук и мультимедиа <span aria-hidden="true">+</span></summary><div class="service-content"><p>Установка магнитол, акустики, камер и видеорегистраторов. Совместимость оборудования проверяется под конкретный автомобиль.</p><button class="text-button" data-select="Автозвук и мультимедиа">Добавить в запрос ↗</button></div></details>
+        <details data-image="wrap" data-alt="Кузов автомобиля, сгенерированная иллюстрация"><summary>Тонировка и PDR <span aria-hidden="true">+</span></summary><div class="service-content"><p>Тонировка стёкол и удаление вмятин без покраски. Возможность и состав работ определяются после осмотра.</p><button class="text-button" data-select="Тонировка или PDR">Добавить в запрос ↗</button></div></details>
+      </div>
+    </div>
+  </section>
+  <section class="request-section section" id="request">
+    <div class="section-heading"><h2>С чего<br>начнём?</h2><p>Укажите автомобиль и выберите услуги. Подготовим текст, который вы сможете самостоятельно отправить мастеру в Telegram.</p></div>
+    <div class="request-layout">
+      <form id="request-form">
+        <label for="car">Ваш автомобиль</label><input id="car" name="car" placeholder="Например, Kia K5, 2022" maxlength="120" autocomplete="off">
+        <fieldset><legend>Что хотите изменить?</legend><div class="choices">
+          <label><input type="checkbox" name="service" value="Контурная подсветка"><span>Контурная подсветка</span></label>
+          <label><input type="checkbox" name="service" value="Звёздное небо"><span>Звёздное небо</span></label>
+          <label><input type="checkbox" name="service" value="Оклейка и антихром"><span>Оклейка и антихром</span></label>
+          <label><input type="checkbox" name="service" value="Полировка и керамика"><span>Полировка и керамика</span></label>
+          <label><input type="checkbox" name="service" value="Шумоизоляция"><span>Шумоизоляция</span></label>
+          <label><input type="checkbox" name="service" value="Автозвук и мультимедиа"><span>Автозвук и мультимедиа</span></label>
+          <label><input type="checkbox" name="service" value="Тонировка или PDR"><span>Тонировка или PDR</span></label>
+        </div></fieldset>
+        <label for="comment">Пожелания</label><textarea id="comment" name="comment" rows="3" maxlength="800" placeholder="Цвет подсветки, зоны оклейки или другие детали"></textarea>
+        <button class="button" type="submit">Подготовить сообщение <span aria-hidden="true">↗</span></button>
+      </form>
+      <div class="request-output"><p class="output-title">Ваш запрос мастеру</p><label class="sr-only" for="message">Готовый текст сообщения</label><textarea id="message" rows="8" readonly>Здравствуйте! Хочу обсудить обновление автомобиля. Подскажите варианты и стоимость.</textarea><div class="output-actions"><button class="copy-button" id="copy" type="button">Скопировать текст</button><a class="plain-link" href="#demo-info" target="_blank" rel="noopener noreferrer">Как работает демо ↗</a></div><p id="copy-status" role="status" aria-live="polite">Форма работает только в браузере. Данные не отправляются и не сохраняются. Для обращения скопируйте текст и отправьте его самостоятельно.</p></div>
+    </div>
+    <noscript><p>Подготовка текста требует JavaScript. Вы можете <a href="#demo-info">прочитать описание демонстрации</a>.</p></noscript>
+  </section>
+  <section class="contact-section section" id="contact">
+    <div class="contact-title"><h2>О концепции</h2><a href="../../">Все работы автора ↗</a></div>
+    <div class="contact-info" id="demo-info"><p>Noche Garage - вымышленная автостудия.</p><p>Сайт демонстрирует подбор услуг, просмотр изображений и подготовку текста заявки. Данные остаются в браузере. Заявки не отправляются.</p><p>Название используется для демонстрации. Фотографии созданы ИИ с нуля и не показывают работы реальной студии.</p></div>
+  </section>
+</main>
+<footer><div class="footer-name" aria-hidden="true">NOCHE GARAGE</div><div class="footer-info"><span>Демонстрационная концепция вымышленной студии. Изображения созданы ИИ.</span><span>Сайт создан Михаилом Милосердовым.</span></div></footer>
+<dialog id="photo-dialog"><button id="close-photo" type="button" aria-label="Закрыть фотографию">×</button><img id="full-photo" alt=""><p id="photo-caption"></p></dialog>
+</body></html>

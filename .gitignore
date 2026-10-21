@@ -1,0 +1,4 @@
+work/
+.taste-skill/
+node_modules/
+*.log

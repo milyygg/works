@@ -1,0 +1,142 @@
+[
+  {
+    "id": "sippop",
+    "title": "SIPPOP!",
+    "category": "sites",
+    "kind": "Интерактивный сайт",
+    "status": "Демонстрационный проект",
+    "description": "Напитки под настроение: смена вкусов, каталог, корзина, две темы и два языка.",
+    "path": "demos/sippop/",
+    "image": "assets/previews/sippop.webp"
+  },
+  {
+    "id": "pigeon-service",
+    "title": "Pigeon Service",
+    "category": "sites",
+    "kind": "Сайт-визитка",
+    "status": "Для клиента",
+    "description": "Сайт частного мастера: услуги, цены, фотографии ремонтов и контакты.",
+    "path": "demos/pigeon-service/",
+    "image": "assets/previews/pigeon-service.webp"
+  },
+  {
+    "id": "fleur",
+    "title": "FLEUR",
+    "category": "sites",
+    "kind": "Каталог с корзиной",
+    "status": "Демонстрационный проект",
+    "description": "Цветочная студия: выбор букета, фильтры, корзина и пример оформления заказа.",
+    "path": "demos/fleur/",
+    "image": "assets/previews/fleur.webp"
+  },
+  {
+    "id": "last-signal",
+    "title": "Последний сигнал",
+    "category": "sites",
+    "kind": "Лендинг квеста",
+    "status": "Демонстрационный проект",
+    "description": "Атмосферная история, календарь сеансов и расчет стоимости команды.",
+    "path": "demos/last-signal/",
+    "image": "assets/previews/last-signal.webp"
+  },
+  {
+    "id": "manicure",
+    "title": "Маникюр у Татьяны",
+    "category": "sites",
+    "kind": "Сайт мастера",
+    "status": "Концепция сайта",
+    "description": "Услуги, примеры маникюра, знакомство с мастером и контакты студии.",
+    "path": "demos/manicure/",
+    "image": "assets/previews/manicure.webp"
+  },
+  {
+    "id": "noche-garage",
+    "title": "Noche Garage",
+    "category": "sites",
+    "kind": "Сайт автостудии",
+    "status": "Демонстрационный проект",
+    "description": "Подсветка, детейлинг и автозвук: выбор услуг, просмотр изображений и подготовка запроса. Вымышленный бренд, изображения ИИ.",
+    "path": "demos/noche-garage/",
+    "image": "assets/previews/noche-garage.webp"
+  },
+  {
+    "id": "pereplet",
+    "title": "Переплёт",
+    "category": "sites",
+    "kind": "Сайт мастерской",
+    "status": "Демонстрационный проект",
+    "description": "Восстановление обуви и кожи: интерактивное сравнение и подбор услуги. Вымышленный бренд, изображения ИИ.",
+    "path": "demos/pereplet/",
+    "image": "assets/previews/pereplet.webp"
+  },
+  {
+    "id": "pigeon-mini",
+    "title": "Pigeon Service Mini",
+    "category": "mini",
+    "kind": "Мобильный мини-сайт",
+    "status": "Демонстрационная версия",
+    "description": "Ремонт техники, фотографии работ и контакты в компактном формате.",
+    "path": "demos/pigeon-mini/",
+    "image": "assets/previews/pigeon-mini.webp"
+  },
+  {
+    "id": "taplink",
+    "title": "Мой TapLink",
+    "category": "mini",
+    "kind": "Самостоятельный мини-сайт",
+    "status": "Личный проект",
+    "description": "Портфолио, услуги, Telegram и социальные сети на одной странице.",
+    "path": "demos/taplink/",
+    "image": "assets/previews/taplink.webp"
+  },
+  {
+    "id": "links",
+    "title": "Страница ссылок",
+    "category": "mini",
+    "kind": "Страница контактов",
+    "status": "Личный проект",
+    "description": "Еще один вариант страницы с услугами, работами и способами связи.",
+    "path": "demos/portfolio/links/",
+    "image": "assets/previews/links.webp"
+  },
+  {
+    "id": "portfolio",
+    "title": "Мое портфолио",
+    "category": "sites",
+    "kind": "Персональный сайт",
+    "status": "Личный проект",
+    "description": "Избранные сайты, кейсы, графика, подход к работе и контакты.",
+    "path": "demos/portfolio/",
+    "image": "assets/previews/portfolio.webp"
+  },
+  {
+    "id": "services",
+    "title": "Услуги и форматы",
+    "category": "sites",
+    "kind": "Страница услуг",
+    "status": "Личный проект",
+    "description": "Форматы сайтов, инфографика, ориентиры по стоимости и порядок работы.",
+    "path": "demos/portfolio/services/",
+    "image": "assets/previews/services.webp"
+  },
+  {
+    "id": "product-cards",
+    "title": "Карточки товаров",
+    "category": "graphics",
+    "kind": "Товарная инфографика",
+    "status": "Дизайн",
+    "description": "Оформление товаров для маркетплейсов. Все готовые карточки и варианты в одном просмотрщике.",
+    "path": "demos/product-cards/",
+    "image": "assets/previews/product-cards.webp"
+  },
+  {
+    "id": "logos",
+    "title": "Логотипы",
+    "category": "graphics",
+    "kind": "Фирменная графика",
+    "status": "Дизайн",
+    "description": "Nexus Cybernetics, Aura Botanica, Find Me и Online Store. Каждый логотип можно рассмотреть отдельно.",
+    "path": "demos/logos/",
+    "image": "assets/previews/logos.webp"
+  }
+]

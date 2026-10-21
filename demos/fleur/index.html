@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLEUR - студия цветов | Букеты и доставка</title>
+  <meta name="description" content="FLEUR - студия авторской флористики. Свежие букеты, композиции в шляпных коробках, свадебная флористика. Доставка за 2 часа." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- preloader -->
+  <div class="preloader" id="preloader">
+    <svg class="preloader__flower" viewBox="0 0 120 120" aria-hidden="true">
+      <g class="preloader__petals">
+        <ellipse cx="60" cy="34" rx="13" ry="24" fill="currentColor" opacity=".85"/>
+        <ellipse cx="60" cy="34" rx="13" ry="24" fill="currentColor" opacity=".7" transform="rotate(60 60 60)"/>
+        <ellipse cx="60" cy="34" rx="13" ry="24" fill="currentColor" opacity=".85" transform="rotate(120 60 60)"/>
+        <ellipse cx="60" cy="34" rx="13" ry="24" fill="currentColor" opacity=".7" transform="rotate(180 60 60)"/>
+        <ellipse cx="60" cy="34" rx="13" ry="24" fill="currentColor" opacity=".85" transform="rotate(240 60 60)"/>
+        <ellipse cx="60" cy="34" rx="13" ry="24" fill="currentColor" opacity=".7" transform="rotate(300 60 60)"/>
+      </g>
+      <circle cx="60" cy="60" r="10" fill="var(--gold)"/>
+    </svg>
+    <p class="preloader__text">FLEUR</p>
+  </div>
+
+  <!-- header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo" data-scroll>
+        <svg viewBox="0 0 40 40" class="logo__icon" aria-hidden="true">
+          <path d="M20 4c3 5 3 9 0 13-3-4-3-8 0-13Z" fill="currentColor"/>
+          <path d="M34 12c-1 6-4 8-9 9 2-5 5-8 9-9Z" fill="currentColor" opacity=".75"/>
+          <path d="M6 12c4 1 7 4 9 9-5-1-8-3-9-9Z" fill="currentColor" opacity=".75"/>
+          <path d="M20 21c0 8 0 11 0 15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M20 30c-4-1-7-3-8-7 4 0 7 2 8 7Z" fill="currentColor" opacity=".6"/>
+        </svg>
+        <span class="logo__text">FLEUR<span class="logo__dot">.</span></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#catalog" class="nav__link" data-scroll>Каталог</a>
+        <a href="#about" class="nav__link" data-scroll>О студии</a>
+        <a href="#delivery" class="nav__link" data-scroll>Доставка</a>
+        <a href="#reviews" class="nav__link" data-scroll>Отзывы</a>
+        <a href="#contacts" class="nav__link" data-scroll>Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#contacts" class="header__phone" data-scroll>+7 (812) 000-00-00</a>
+        <button class="cart-btn" id="cartBtn" aria-label="Открыть корзину">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 7h12l1.2 13H4.8L6 7Z"/>
+            <path d="M9 10V6a3 3 0 0 1 6 0v4"/>
+          </svg>
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- мобильное меню -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="#catalog" data-scroll>Каталог</a>
+      <a href="#about" data-scroll>О студии</a>
+      <a href="#delivery" data-scroll>Доставка</a>
+      <a href="#reviews" data-scroll>Отзывы</a>
+      <a href="#contacts" data-scroll>Контакты</a>
+    </nav>
+    <a href="#contacts" class="mobile-menu__phone" data-scroll>+7 (812) 000-00-00</a>
+  </div>
+
+  <main>
+    <!-- hero -->
+    <section class="hero" id="hero">
+      <canvas class="hero__petals" id="petalsCanvas" aria-hidden="true"></canvas>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__demo">Учебный проект: магазин, отзывы и показатели вымышлены.</p>
+          <p class="hero__eyebrow reveal-line"><span>студия авторской флористики</span></p>
+          <h1 class="hero__title">
+            <span class="reveal-line"><span>Цветы, которые</span></span>
+            <span class="reveal-line"><span>говорят <em>за вас</em></span></span>
+          </h1>
+          <p class="hero__sub reveal-line"><span>Собираем букеты вручную каждое утро - из цветов, приехавших на рассвете. Доставим за 2 часа по городу.</span></p>
+          <div class="hero__cta">
+            <a href="#catalog" class="btn btn--primary" data-scroll>
+              <span>Выбрать букет</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#about" class="btn btn--ghost" data-scroll><span>О студии</span></a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>12</strong><span>лет дарим эмоции</span></li>
+            <li><strong>5 000+</strong><span>букетов доставлено</span></li>
+            <li><strong>2 ч</strong><span>среднее время доставки</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__photo" id="heroPhoto">
+          <img src="assets/img/hero-peonies.jpg" alt="Нежно-розовые пионы в стеклянной вазе" width="1600" height="2276" loading="eager" />
+        </div>
+        <div class="hero__chip">🌸 100 букетов в каталоге</div>
+        <div class="hero__badge">
+          <svg viewBox="0 0 100 100" class="hero__badge-circle" aria-hidden="true">
+            <defs><path id="circlePath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+            <text><textPath href="#circlePath">свежесть каждого цветка • гарантия 7 дней •</textPath></text>
+          </svg>
+          <span class="hero__badge-core">🌿</span>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span></span>
+        листайте
+      </div>
+    </section>
+
+    <!-- marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>пионы</span><i>✿</i><span>садовые розы</span><i>✿</i><span>гортензии</span><i>✿</i><span>тюльпаны</span><i>✿</i><span>эустома</span><i>✿</i><span>сухоцветы</span><i>✿</i><span>шляпные коробки</span><i>✿</i><span>свадебная флористика</span><i>✿</i>
+        <span>пионы</span><i>✿</i><span>садовые розы</span><i>✿</i><span>гортензии</span><i>✿</i><span>тюльпаны</span><i>✿</i><span>эустома</span><i>✿</i><span>сухоцветы</span><i>✿</i><span>шляпные коробки</span><i>✿</i><span>свадебная флористика</span><i>✿</i>
+      </div>
+    </div>
+
+    <!-- catalog -->
+    <section class="catalog section" id="catalog">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow reveal">коллекция недели</p>
+          <h2 class="section__title reveal">Букеты, собранные <em>сегодня утром</em></h2>
+          <p class="section__sub reveal">Каждая композиция - в единственном экземпляре. Добавьте в корзину, а флорист соберёт точную копию к нужному времени.</p>
+        </div>
+
+        <div class="catalog__filters reveal" id="filters" role="tablist" aria-label="Категории букетов"></div>
+        <div class="catalog__grid" id="catalogGrid"></div>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section class="about section" id="about">
+      <div class="container about__inner">
+        <div class="about__media reveal-scale">
+          <div class="about__frame">
+            <img src="assets/img/interior-1.png" alt="Интерьер цветочной студии FLEUR" loading="lazy" />
+          </div>
+          <div class="about__card">
+            <strong>98%</strong>
+            <span>клиентов возвращаются<br>к нам снова</span>
+          </div>
+        </div>
+        <div class="about__content">
+          <p class="section__eyebrow reveal">о студии</p>
+          <h2 class="section__title reveal">Мы верим: букет - это <em>письмо без слов</em></h2>
+          <p class="about__text reveal">FLEUR начался в 2014-м с маленького прилавка у рынка и одной мечты - чтобы цветы в городе были такими же живыми, как на рассвете в оранжерее. Сегодня у нас своя студия, холодильники с контролем влажности и команда из девяти флористов.</p>
+          <ul class="about__list">
+            <li class="reveal"><span>01</span>Поставки из Эквадора, Голландии и местных оранжерей - три раза в неделю</li>
+            <li class="reveal"><span>02</span>Каждый букет фотографируем перед доставкой - вы видите, что получите</li>
+            <li class="reveal"><span>03</span>Гарантия свежести 7 дней: заменим букет, если цветы увяли раньше</li>
+          </ul>
+          <a href="#catalog" class="btn btn--primary reveal" data-scroll><span>Смотреть коллекцию</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- delivery / features -->
+    <section class="features section" id="delivery">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow reveal">доставка и забота</p>
+          <h2 class="section__title reveal">Всё, чтобы подарок <em>дошёл идеальным</em></h2>
+        </div>
+        <div class="features__grid">
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>
+            </div>
+            <h3>Доставка за 2 часа</h3>
+            <p>Курьеры с термобоксами сохраняют прохладу букету даже в +30. Точно ко времени - к будильнику получателя.</p>
+          </article>
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21Z"/></svg>
+            </div>
+            <h3>Анонимный сюрприз</h3>
+            <p>Подпишем открытку от руки и не раскроем отправителя, пока вы сами этого не захотите.</p>
+          </article>
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </div>
+            <h3>Круглосуточно</h3>
+            <p>Принимаем заказы 24/7. Ночная сборка - для тех, у кого сюрприз не терпит утра.</p>
+          </article>
+          <article class="feature reveal">
+            <div class="feature__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9.5 17.5 4 12"/></svg>
+            </div>
+            <h3>Гарантия свежести</h3>
+            <p>7 дней стойкости или заменим композицию бесплатно. Без чеков, споров и лишних вопросов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- parallax banner -->
+    <section class="banner">
+      <div class="banner__bg" data-parallax>
+        <img src="assets/img/banner-peony.jpg" alt="" loading="lazy" />
+      </div>
+      <div class="banner__overlay"></div>
+      <div class="container banner__content">
+        <h2 class="reveal">Не нашли «тот самый» букет?</h2>
+        <p class="reveal">Опишите повод и характер человека - флорист соберёт индивидуальную композицию и пришлёт фото на согласование.</p>
+        <a href="#contacts" class="btn btn--light reveal" data-scroll><span>Обсудить с флористом</span></a>
+      </div>
+    </section>
+
+    <!-- reviews -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow reveal">отзывы</p>
+          <h2 class="section__title reveal">Нас рекомендуют <em>друг другу</em></h2>
+        </div>
+        <div class="reviews__grid">
+          <blockquote class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <p>Заказывала пионы маме на юбилей в 7 утра - в 9:40 курьер уже звонил в её дверь. Мама плакала от счастья, фото букета прислали заранее. Это сервис нового уровня!</p>
+            <footer><strong>Анна К.</strong><span>март 2026</span></footer>
+          </blockquote>
+          <blockquote class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <p>Третий год заказываю здесь цветы для жены на все даты. Ни разу не повторились - каждый раз новая композиция, будто читали её мысли. Отдельное спасибо за открытки от руки.</p>
+            <footer><strong>Дмитрий В.</strong><span>февраль 2026</span></footer>
+          </blockquote>
+          <blockquote class="review reveal">
+            <div class="review__stars">★★★★★</div>
+            <p>Оформляли свадьбу полностью: арку, букет невесты, столы. Команда приехала в 5 утра и всё расставила до приезда гостей. Цветы простояли ещё неделю после медового месяца.</p>
+            <footer><strong>Мария и Сергей</strong><span>июль 2025</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- cta / contacts -->
+    <section class="contacts section" id="contacts">
+      <div class="container contacts__inner">
+        <div class="contacts__info">
+          <p class="section__eyebrow reveal">контакты</p>
+          <h2 class="section__title reveal">Заходите на кофе<br>и <em>запах пионов</em></h2>
+          <ul class="contacts__list">
+            <li class="reveal">
+              <span>адрес</span>
+              Санкт-Петербург, ул. Цветочная, 1 (демо-адрес)
+            </li>
+            <li class="reveal">
+              <span>телефон</span>
+              <a href="tel:+78120000000">+7 (812) 000-00-00</a>
+            </li>
+            <li class="reveal">
+              <span>почта</span>
+              <a href="mailto:hello@fleur.demo">hello@fleur.demo</a>
+            </li>
+            <li class="reveal">
+              <span>соцсети</span>
+              <a href="#" rel="noopener">Telegram</a> · <a href="#" rel="noopener">WhatsApp</a> · <a href="#" rel="noopener">VK</a>
+            </li>
+          </ul>
+        </div>
+        <form class="contacts__form reveal" id="callbackForm" novalidate>
+          <h3>Оставить заявку</h3>
+          <p>Демонстрация формы: используйте вымышленные данные. Заявка не отправляется.</p>
+          <label>
+            <span>Ваше имя</span>
+            <input type="text" name="name" placeholder="Как к вам обращаться?" required />
+          </label>
+          <label>
+            <span>Телефон</span>
+            <input type="tel" name="phone" placeholder="+7 ___ ___-__-__" required />
+          </label>
+          <label>
+            <span>Повод</span>
+            <select name="occasion">
+              <option>День рождения</option>
+              <option>Свидание / годовщина</option>
+              <option>Свадьба</option>
+              <option>Корпоратив / оформление</option>
+              <option>Просто так ♥</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full"><span>Жду звонка</span></button>
+          <p class="contacts__note">Это учебный пример. Данные не передаются в магазин и не сохраняются на сервере.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#hero" class="logo logo--footer" data-scroll>
+        <span class="logo__text">FLEUR<span class="logo__dot">.</span></span>
+      </a>
+      <p class="footer__tag">студия авторской флористики · с 2014 года</p>
+      <nav class="footer__nav">
+        <a href="#catalog" data-scroll>Каталог</a>
+        <a href="#about" data-scroll>О студии</a>
+        <a href="#delivery" data-scroll>Доставка</a>
+        <a href="#contacts" data-scroll>Контакты</a>
+      </nav>
+      <p class="footer__copy">© 2026 FLEUR. Все цветы выращены с любовью.</p>
+      <p class="footer__copy">Учебный демо-проект: магазин, контакты и отзывы вымышлены. Сделано <a href="https://t.me/milyy_gg" target="_blank" rel="noopener">Михаилом Милосердовым</a>.</p>
+    </div>
+  </footer>
+
+  <!-- cart drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart" id="cart" aria-label="Корзина">
+    <div class="cart__head">
+      <h3>Ваш букетный выбор</h3>
+      <button class="cart__close" id="cartClose" aria-label="Закрыть корзину">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="cart__items" id="cartItems"></div>
+    <div class="cart__foot" id="cartFoot">
+      <div class="cart__total">
+        <span>Итого</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <p class="cart__hint" id="cartHint">До бесплатной доставки не хватает <b id="freeShipLeft">5 000 ₽</b></p>
+      <button class="btn btn--primary btn--full" id="checkoutBtn"><span>Оформить заказ</span></button>
+    </div>
+    <div class="cart__empty" id="cartEmpty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.2 13H4.8L6 7Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+      <p>Пока пусто…<br>Самое время выбрать букет ♥</p>
+      <button class="btn btn--ghost" id="goCatalog"><span>В каталог</span></button>
+    </div>
+  </aside>
+
+  <!-- checkout modal -->
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Оформление заказа">
+    <div class="modal__box">
+      <button class="modal__close" id="modalClose" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="modal__form" id="checkoutFormWrap">
+        <h3>Пример оформления заказа</h3>
+        <p>Учебный сценарий: вводите только вымышленные данные. Заказ и оплата не создаются.</p>
+        <p class="modal__sum">К оплате: <strong id="modalSum">0 ₽</strong></p>
+        <form id="checkoutForm" novalidate>
+          <label><span>Имя получателя или отправителя</span><input type="text" name="name" required placeholder="Иван" /></label>
+          <label><span>Телефон</span><input type="tel" name="phone" required placeholder="+7 ___ ___-__-__" /></label>
+          <label><span>Адрес доставки</span><input type="text" name="address" required placeholder="ул. Цветочная, 1, кв. 1" /></label>
+          <label><span>Комментарий и текст открытки</span><textarea name="comment" rows="3" placeholder="«С днём рождения, любимая!» - подпишем от руки"></textarea></label>
+          <button type="submit" class="btn btn--primary btn--full"><span>Подтвердить заказ</span></button>
+        </form>
+      </div>
+      <div class="modal__success" id="orderSuccess" hidden>
+        <div class="modal__success-icon">🌸</div>
+        <h3>Демонстрация завершена</h3>
+        <p>Вы прошли пример оформления. Реальный заказ не создан, данные не отправлены, оплата не списана.</p>
+        <button class="btn btn--primary" id="successClose"><span>Чудесно</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- кастомный скроллбар: стебель с шипами и розой-ползунком -->
+  <div class="scroll-rose" id="scrollRose" aria-hidden="true">
+    <svg class="scroll-rose__stem" id="scrollStem" viewBox="0 0 28 700" preserveAspectRatio="none"></svg>
+    <div class="scroll-rose__bud" id="scrollBud">
+      <svg viewBox="0 0 44 44">
+        <path d="M22 40c0-6 0-9 0-13" stroke="#7fa08c" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M22 33c-4-1-6-3-7-6 4 0 6 2 7 6Z" fill="#9dbba8" opacity=".8"/>
+        <path d="M22 5c9 0 16 6 16 14 0 10-8 16-16 16S6 29 6 19C6 11 13 5 22 5Z" fill="#dfa195"/>
+        <path d="M22 11c6 0 10 4 10 9 0 6-5 10-10 10s-10-4-10-10c0-5 4-9 10-9Z" fill="#e8b5a9"/>
+        <path d="M22 16c3.5 0 6 2 6 5 0 3.5-2.5 5.5-6 5.5s-6-2-6-5.5c0-3 2.5-5 6-5Z" fill="#f3d3c9"/>
+        <path d="M22 20c1.8 0 3 1.2 3 2.6 0 1.7-1.3 2.8-3 2.8s-3-1.1-3-2.8c0-1.4 1.2-2.6 3-2.6Z" fill="#fbeae4"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast__icon">✓</span>
+    <span id="toastText">Товар добавлен в корзину</span>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+

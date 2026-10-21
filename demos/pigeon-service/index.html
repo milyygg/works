@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pigeon Service — ремонт телефонов и ноутбуков в Санкт-Петербурге</title>
+<meta name="description" content="Я Леонид, частный мастер: ремонт iPhone, Android, ноутбуков и компьютеров на севере Санкт-Петербурга. Бесплатная диагностика, цена до начала ремонта. Рейтинг 5,0 на Авито.">
+<style>
+:root{
+  --yellow:#ffc529; --yellow-soft:#fff1c2; --orange:#e8571f; --blue:#1e4fd6; --blue-dark:#14338f; --teal:#1aa6d4;
+  --ink:#1f1510; --ink-soft:#5b4d44; --cream:#fff8e6; --white:#fff; --line:#eadfc4;
+  --radius:22px; --pop:5px 5px 0 var(--ink);
+  --font:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.55;font-size:16px;padding-bottom:78px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+ul,ol{list-style:none}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+.section{padding:72px 0}
+.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--yellow);border:2px solid var(--ink);border-radius:100px;padding:5px 14px;margin-bottom:14px}
+h2{font-size:clamp(28px,5vw,44px);line-height:1.1;margin-bottom:14px;letter-spacing:-.015em}
+h2 em{font-style:normal;color:var(--orange)}
+.lead{color:var(--ink-soft);max-width:62ch;margin-bottom:36px;font-size:17px}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 28px;border-radius:100px;border:3px solid var(--ink);font:800 16px var(--font);text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s,background .2s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn--main{background:var(--orange);color:#fff}
+.btn--blue{background:var(--blue);color:#fff}
+.btn--line{background:var(--white);color:var(--ink)}
+
+/* шапка */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,248,230,.94);backdrop-filter:blur(10px);border-bottom:3px solid var(--ink)}
+.top__in{display:flex;align-items:center;justify-content:space-between;min-height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:19px}
+.logo img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:3px solid var(--ink)}
+.nav{display:none;gap:26px}
+.nav a{text-decoration:none;font-weight:700;font-size:15px}
+.nav a:hover{color:var(--orange)}
+.top__phone{font-weight:900;text-decoration:none;white-space:nowrap}
+@media(min-width:900px){.nav{display:flex}}
+@media(max-width:420px){.top__phone{font-size:14px}.logo{font-size:16px}}
+
+/* hero */
+.hero{padding:48px 0 64px;background:
+  radial-gradient(circle at 1px 1px,rgba(31,21,16,.12) 1.5px,transparent 0) 0 0/22px 22px,
+  radial-gradient(60% 70% at 85% 10%,var(--yellow-soft),transparent 70%),var(--cream)}
+.hero__grid{display:grid;gap:40px;align-items:center;grid-template-columns:minmax(0,1fr)}
+.hero__grid>*{min-width:0}
+.hero h1{font-size:clamp(36px,7vw,64px);line-height:1.02;letter-spacing:-.025em;margin-bottom:30px}
+.hero h1 em{font-style:normal;color:var(--orange);background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+.hero p.sub{font-size:clamp(16px,2.4vw,19px);color:var(--ink-soft);max-width:48ch;margin-bottom:28px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips li{background:var(--white);border:2px solid var(--ink);border-radius:100px;padding:8px 16px;font-size:14px;font-weight:700}
+.chips b{color:var(--orange)}
+.hero__art{position:relative;max-width:540px;margin-inline:auto;width:100%}
+.hero__art>img{border-radius:28px;border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);aspect-ratio:1/1;object-fit:cover;width:100%}
+.sticker{position:absolute;display:grid;place-content:center;text-align:center;border:3px solid var(--ink);border-radius:50%;font-weight:900;line-height:1.1}
+.sticker--rate{top:-18px;right:-8px;width:112px;height:112px;background:var(--yellow);transform:rotate(9deg);font-size:13px;box-shadow:3px 3px 0 var(--ink)}
+.sticker--rate strong{font-size:34px;display:block}
+.sticker--free{bottom:-14px;left:-10px;width:104px;height:104px;background:var(--orange);color:#fff;transform:rotate(-8deg);font-size:13px;box-shadow:3px 3px 0 var(--ink)}
+@media(min-width:900px){.hero__grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+
+/* бегущая строка */
+.ticker{background:var(--yellow);border-block:3px solid var(--ink);overflow:hidden;padding:14px 0}
+.ticker__track{display:flex;gap:30px;width:max-content;font-weight:900;font-size:18px;text-transform:uppercase;letter-spacing:.04em;animation:run 38s linear infinite}
+.ticker__track span::after{content:"✦";margin-left:30px;color:var(--orange)}
+@keyframes run{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker__track{animation:none}}
+
+.about{display:grid;gap:36px;align-items:center;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.about{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
+.about__p{font-size:17px;color:var(--ink-soft);margin-bottom:14px;max-width:58ch}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.facts li{background:var(--white);border:3px solid var(--ink);border-radius:var(--radius);box-shadow:var(--pop);padding:22px 18px;display:flex;flex-direction:column;gap:4px}
+.facts b{font-size:clamp(28px,5vw,40px);line-height:1;color:var(--orange)}
+.facts span{font-size:14.5px;color:var(--ink-soft)}
+/* почему выбирают *//* общие карточки */
+.card{background:var(--white);border:3px solid var(--ink);border-radius:var(--radius);box-shadow:var(--pop);overflow:hidden;display:flex;flex-direction:column}
+
+/* преимущества */
+.perks{display:grid;gap:24px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.perks{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.perk__img{position:relative;height:230px;flex:none;overflow:hidden;background:#fffef5;border-bottom:3px solid var(--ink)}
+.perk__img img{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:contain;mix-blend-mode:multiply}
+.perk__body{padding:22px 24px 26px}
+.perk__body h3{font-size:21px;margin-bottom:8px}
+.perk__body p{color:var(--ink-soft);font-size:15.5px}
+
+/* услуги */
+.svc-sec{background:var(--yellow-soft);border-block:3px solid var(--ink)}
+.services{display:grid;gap:24px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:680px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1040px){.services{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.svc__img{aspect-ratio:5/4;border-bottom:3px solid var(--ink);overflow:hidden;background:var(--teal)}
+.svc__img img{width:100%;height:100%;object-fit:cover}
+.svc__body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.svc__body h3{font-size:22px;margin-bottom:12px}
+.rows{display:flex;flex-direction:column;margin-top:auto}
+.rows li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-top:2px dashed var(--line);font-size:15.5px}
+.rows li b{color:var(--orange);white-space:nowrap}
+.rows li.free b{color:var(--blue)}
+.svc__lead{color:var(--ink-soft);font-size:15px;margin-bottom:12px}
+.note{margin-top:30px;padding:20px 24px;border-radius:var(--radius);background:var(--white);border:3px solid var(--ink);box-shadow:var(--pop);font-size:15.5px}
+.note b{color:var(--blue)}
+
+/* шаги */
+.how{display:grid;gap:32px;align-items:center;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.how{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}}
+.steps{display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:16px 18px;box-shadow:4px 4px 0 var(--ink)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--yellow);border:3px solid var(--ink);font-weight:900;font-size:20px}
+.steps h3{font-size:18px;margin-bottom:2px}
+.steps p{color:var(--ink-soft);font-size:15px}
+.how__art{border:4px solid var(--ink);border-radius:28px;box-shadow:8px 8px 0 var(--ink);overflow:hidden;background:#fcfcfc}
+
+/* работы */
+.works{background:var(--white);border-block:3px solid var(--ink)}
+.cases{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.cases{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.case__img{aspect-ratio:1/1;border-bottom:3px solid var(--ink);overflow:hidden;background:#cfe8f5}
+.case__img img{width:100%;height:100%;object-fit:cover}
+.case__body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tag{align-self:flex-start;background:var(--teal);color:#fff;border:2px solid var(--ink);border-radius:100px;padding:4px 14px;font-size:13px;font-weight:800}
+.case h3{font-size:26px;line-height:1.1}
+.case p{color:var(--ink-soft);font-size:15.5px}
+.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.thumbs img{aspect-ratio:4/3;object-fit:cover;width:100%;border:2px solid var(--ink);border-radius:12px}
+.price{margin-top:auto;padding-top:12px;border-top:2px dashed var(--line);font-size:13px;color:var(--ink-soft);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.price b{font-size:28px;color:var(--ink)}
+.calc{border:2px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--cream)}
+.calc div{display:flex;justify-content:space-between;gap:12px;padding:8px 14px;border-bottom:1px solid var(--line);font-size:14.5px}
+.calc div:last-child{border:0}
+
+.also{margin-top:60px}
+.also h3{font-size:28px;margin-bottom:4px}
+.also>p{color:var(--ink-soft);margin-bottom:18px}
+.table{border:3px solid var(--ink);border-radius:var(--radius);box-shadow:var(--pop);overflow:hidden;background:var(--cream)}
+.table li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center;padding:16px 22px;border-bottom:2px solid var(--line)}
+.table li:last-child{border-bottom:0}
+.table li strong{display:block;font-size:17px}
+.table li span{color:var(--ink-soft);font-size:14.5px}
+.table li b{font-size:20px;color:var(--orange);white-space:nowrap}
+
+/* отзывы */
+.rating{display:flex;flex-wrap:wrap;align-items:center;gap:20px;background:var(--ink);color:var(--cream);border-radius:var(--radius);padding:22px 28px;margin-bottom:26px;border:3px solid var(--ink);box-shadow:var(--pop)}
+.rating strong{font-size:58px;line-height:1;color:var(--yellow)}
+.rating .stars{color:var(--yellow);letter-spacing:4px;font-size:22px}
+.rating small{display:block;opacity:.85;font-size:14px;margin-top:2px}
+.reviews{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:680px){.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1040px){.reviews{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.rev{background:var(--white);border:3px solid var(--ink);border-radius:var(--radius);padding:22px 24px;box-shadow:4px 4px 0 var(--ink);display:flex;flex-direction:column}
+.rev .stars{color:#f5a300;letter-spacing:2px;margin-bottom:8px}
+.rev p{margin-bottom:14px;font-size:15.5px}
+.rev footer{margin-top:auto;font-size:13px;color:var(--ink-soft)}
+.rev footer b{color:var(--ink)}
+.src{margin-top:22px;font-size:14px;color:var(--ink-soft)}
+.src a{color:var(--blue);font-weight:800}
+
+/* контакты */
+.contacts{background:var(--blue);color:#fff;border-top:3px solid var(--ink)}
+.contacts .eyebrow{color:var(--ink)}
+.contacts .lead{color:#dbe4ff}
+.lead--wide{max-width:none}
+.cgrid{display:grid;gap:24px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:800px){.cgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cbox{background:var(--white);color:var(--ink);border:3px solid var(--ink);border-radius:var(--radius);box-shadow:6px 6px 0 var(--ink);padding:28px}
+.cbox h3{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.cbox p{margin-bottom:6px}
+.cbox .big{font-size:30px;font-weight:900;text-decoration:none;display:inline-block;margin-bottom:6px}
+.cbox .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cbox .links a{background:var(--yellow);padding:10px 18px;border:2px solid var(--ink);border-radius:100px;font-weight:800;text-decoration:none;font-size:15px}
+.cbox .links a:hover{background:var(--orange);color:#fff}
+
+footer.site{background:var(--ink);color:#c9bdb2;padding:26px 0;font-size:14px}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer.site a{color:var(--yellow)}
+
+/* липкая панель на телефоне */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,248,230,.97);border-top:3px solid var(--ink)}
+.bar .btn{flex:1;min-height:52px;padding:0 12px;box-shadow:3px 3px 0 var(--ink)}
+@media(min-width:900px){.bar{display:none}body{padding-bottom:0}}
+
+@media(prefers-reduced-motion:no-preference){
+  .fade{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+  .fade.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="logo" href="#top" aria-label="Pigeon Service"><img src="assets/mascot.jpg" alt="" width="42" height="42"><span>Pigeon Service</span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#prices">Услуги и цены</a>
+      <a href="#how">Как всё проходит</a>
+      <a href="#works">Работы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="top__phone" href="tel:+79219245421">+7 921 924-54-21</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="eyebrow">Привет, я Леонид · Санкт-Петербург</span>
+      <h1>Ремонт телефонов и ноутбуков <em>без сюрпризов в цене</em></h1>
+      <div class="hero__cta">
+        <a class="btn btn--main" href="tel:+79219245421">Позвонить мне</a>
+        <a class="btn btn--line" href="https://t.me/XliveJam" target="_blank" rel="noopener">Написать в Telegram</a>
+      </div>
+      <ul class="chips">
+        <li><b>5,0</b> · 761 отзыв на Авито</li>
+        <li>Бесплатная диагностика</li>
+        <li>М. Проспект Просвещения · Озерки · Парнас</li>
+      </ul>
+    </div>
+    <div class="hero__art">
+      <img src="assets/mascot.jpg" alt="Мастер пожимает руку весёлому смартфону, на плече у него голубь в наушниках" width="540" height="540">
+      <div class="sticker sticker--rate"><span><strong>5,0</strong>на Авито</span></div>
+      <div class="sticker sticker--free"><span>диагностика<br>бесплатно</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>iPhone</span><span>Samsung</span><span>Xiaomi</span><span>Redmi</span><span>Honor</span><span>Huawei</span><span>Realme</span><span>MacBook</span><span>Ноутбуки</span><span>Компьютеры</span>
+    <span>iPhone</span><span>Samsung</span><span>Xiaomi</span><span>Redmi</span><span>Honor</span><span>Huawei</span><span>Realme</span><span>MacBook</span><span>Ноутбуки</span><span>Компьютеры</span>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="wrap about">
+    <div class="fade">
+      <span class="eyebrow">обо мне</span>
+      <h2>Привет, я <em>Леонид</em></h2>
+      <p class="about__p">Я частный мастер по ремонту смартфонов, ноутбуков и компьютеров. Обожаю свою работу и по-настоящему «горю» процессом.</p>
+      <p class="about__p">Работаю в своей уютной мастерской, без выезда по городу, чтобы ремонт был максимально качественным. Использую хорошие запчасти, оригинал и аналоги от проверенных поставщиков.</p>
+      <p class="about__p">Для меня важно, чтобы вы остались довольны и вернулись ко мне сами, а потом порекомендовали друзьям.</p>
+    </div>
+    <ul class="facts fade">
+      <li><b>2013</b><span>на Авито с апреля</span></li>
+      <li><b>761</b><span>отзыв, рейтинг 5,0</span></li>
+      <li><b>30 мин</b><span>в среднем отвечаю</span></li>
+      <li><b>0 ₽</b><span>диагностика</span></li>
+    </ul>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">почему выбирают</span>
+    <h2>Объясняю <em>простыми словами</em></h2>
+    <p class="lead">Не навязываю лишнего и честно скажу, если ремонт не имеет смысла.</p>
+    <div class="perks">
+      <article class="card perk fade">
+        <div class="perk__img"><img src="assets/pigeon.jpg" alt="Голубь в жёлтых наушниках сидит на отвёртке" loading="lazy"></div>
+        <div class="perk__body"><h3>Бесплатная диагностика</h3><p>Перед ремонтом всё объясняю понятно. Если ремонт нецелесообразен или выйдет дорого, скажу сразу.</p></div>
+      </article>
+      <article class="card perk fade">
+        <div class="perk__img"><img src="assets/parts.jpg" alt="Смартфон выбирает между коробками «оригинал» и «аналог»" loading="lazy"></div>
+        <div class="perk__body"><h3>Оригинал или аналог</h3><p>Почти всегда есть несколько вариантов запчастей. Подскажу, где не нужно переплачивать.</p></div>
+      </article>
+      <article class="card perk fade">
+        <div class="perk__img"><img src="assets/price.jpg" alt="Голубь в наушниках с табличкой «Дешевле»" loading="lazy"></div>
+        <div class="perk__body"><h3>Честные цены</h3><p>Озвучиваю стоимость сразу, никаких повышений после ремонта.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section svc-sec" id="prices">
+  <div class="wrap">
+    <span class="eyebrow">услуги и цены</span>
+    <h2>Что чиню и <em>сколько это стоит</em></h2>
+    <p class="lead">Ниже стартовые цены. Итоговая сумма зависит от модели и запчасти: оригинал, аналог или сервисная деталь. Назову её сразу после диагностики.</p>
+
+    <div class="services">
+      <article class="card fade">
+        <div class="svc__img"><img src="assets/s-screen.jpg" alt="Разбитый экран смартфона на рабочем столе" loading="lazy"></div>
+        <div class="svc__body"><h3>Экран и стекло</h3>
+          <ul class="rows">
+            <li><span>Замена дисплея</span><b>от 2 000 ₽</b></li>
+            <li><span>Замена стекла</span><b>от 2 000 ₽</b></li>
+            <li><span>Замена тачскрина</span><b>от 2 000 ₽</b></li>
+          </ul></div>
+      </article>
+      <article class="card fade">
+        <div class="svc__img"><img src="assets/s-battery.jpg" alt="Замена аккумулятора, когда смартфон быстро разряжается" loading="lazy" style="object-position:center 30%"></div>
+        <div class="svc__body"><h3>Аккумулятор</h3>
+          <ul class="rows">
+            <li><span>Замена аккумулятора</span><b>от 2 000 ₽</b></li>
+            <li class="free"><span>Диагностика</span><b>бесплатно</b></li>
+          </ul></div>
+      </article>
+      <article class="card fade">
+        <div class="svc__img"><img src="assets/s-case.jpg" alt="Замена корпуса и задней крышки смартфона" loading="lazy"></div>
+        <div class="svc__body"><h3>Корпус и задняя панель</h3>
+          <ul class="rows">
+            <li><span>Замена корпуса</span><b>от 4 000 ₽</b></li>
+            <li><span>Замена задней панели</span><b>от 1 500 ₽</b></li>
+            <li><span>Замена стекла камеры</span><b>от 2 000 ₽</b></li>
+          </ul></div>
+      </article>
+      <article class="card fade">
+        <div class="svc__img"><img src="assets/s-charge.jpg" alt="Телефон не заряжается: проблемы с разъёмом зарядки" loading="lazy" style="object-position:center 12%"></div>
+        <div class="svc__body"><h3>Зарядка и разъёмы</h3>
+          <ul class="rows">
+            <li><span>Замена разъёма зарядки</span><b>от 2 000 ₽</b></li>
+            <li><span>Замена шлейфа</span><b>от 2 000 ₽</b></li>
+            <li><span>Чистка разъёма</span><b>1 500 ₽</b></li>
+          </ul></div>
+      </article>
+      <article class="card fade">
+        <div class="svc__img"><img src="assets/s-android.jpg" alt="Ремонт Android-смартфонов Samsung, Xiaomi, Redmi, Poco, Huawei, Honor" loading="lazy"></div>
+        <div class="svc__body"><h3>Камеры, звук и кнопки</h3>
+          <ul class="rows">
+            <li><span>Замена камеры</span><b>от 2 000 ₽</b></li>
+            <li><span>Динамик и микрофон</span><b>от 2 000 ₽</b></li>
+            <li><span>Кнопки, сканер отпечатка</span><b>от 2 000 ₽</b></li>
+            <li><span>Чистка динамика</span><b>от 1 500 ₽</b></li>
+          </ul></div>
+      </article>
+      <article class="card fade">
+        <div class="svc__img"><img src="assets/s-pc.jpg" alt="Сборка компьютера на заказ, ремонт ноутбуков, установка Windows и macOS" loading="lazy" style="object-position:center 35%"></div>
+        <div class="svc__body"><h3>Ноутбуки и компьютеры</h3>
+          <p class="svc__lead">Цена зависит от задачи, назову после диагностики.</p>
+          <ul class="rows">
+            <li><span>Ремонт ноутбуков и MacBook</span><b>по запросу</b></li>
+            <li><span>Установка Windows, macOS</span><b>по запросу</b></li>
+            <li><span>Сборка ПК под ваш бюджет</span><b>по запросу</b></li>
+          </ul></div>
+      </article>
+    </div>
+
+    <p class="note fade"><b>Как формируется цена.</b> Она складывается из стоимости запчасти и моей работы. Пример расчёта по пунктам смотрите ниже, в разделе «Примеры работ».</p>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <span class="eyebrow">как всё проходит</span>
+    <h2>Четыре простых шага</h2>
+    <p class="lead">Работаю в своей мастерской и не выезжаю по городу. Так ремонт получается аккуратнее.</p>
+    <div class="how">
+      <ol class="steps">
+        <li class="fade"><div><h3>Позвоните или напишите</h3><p>Расскажите, что случилось и какая модель. Отвечаю в среднем в течение получаса.</p></div></li>
+        <li class="fade"><div><h3>Согласуем день</h3><p>Договариваемся о времени, когда вам удобно приехать.</p></div></li>
+        <li class="fade"><div><h3>Приезжаете в мастерскую</h3><p>Ул. Композиторов, 33/5. Бесплатно проверяю устройство и называю цену и варианты запчастей.</p></div></li>
+        <li class="fade"><div><h3>Ремонт</h3><p>Сделаю сразу или за несколько дней. Срок зависит от поломки и наличия детали, скажу заранее.</p></div></li>
+      </ol>
+      <div class="how__art fade"><img src="assets/team.jpg" alt="Смартфоны-персонажи вместе чинят смартфон, на плече голубь" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section works" id="works">
+  <div class="wrap">
+    <span class="eyebrow">примеры работ</span>
+    <h2>Что получается <em>после ремонта</em></h2>
+    <p class="lead">Мои реальные работы с реальными ценами. Цена указана вместе с запчастью и работой.</p>
+
+    <div class="cases">
+      <article class="card case fade">
+        <div class="case__img"><img src="assets/iphone14pro-case.jpg" alt="iPhone 14 Pro: разбитая задняя крышка до ремонта и целый корпус после" loading="lazy"></div>
+        <div class="case__body">
+          <span class="tag">Замена корпуса</span>
+          <h3>iPhone 14 Pro</h3>
+          <p>Если задняя крышка не продаётся отдельно, меняют весь корпус. Заодно телефон получает новые боковые грани, кнопки, стёкла камер и сеточки динамика. Если дисплей в порядке, выглядит как новый.</p>
+          <div class="price"><span>полная стоимость</span><b>6 600 ₽</b></div>
+        </div>
+      </article>
+
+      <article class="card case fade">
+        <div class="case__img"><img src="assets/iphone14-battery.jpg" alt="iPhone 14 после замены аккумулятора: в настройках нет сообщения об ошибке" loading="lazy"></div>
+        <div class="case__body">
+          <span class="tag">Замена аккумулятора</span>
+          <h3>iPhone 14</h3>
+          <p>Установлен аккумулятор Foxconn, после ремонта нет сообщения об ошибке. Такие батареи пока редкие. Бывают и варианты «с ошибкой», на работу она не влияет.</p>
+          <div class="price"><span>запчасть и работа</span><b>3 500 ₽</b></div>
+        </div>
+      </article>
+
+      <article class="card case fade">
+        <div class="case__img"><img src="assets/iphone16-restored.jpg" alt="Восстановленный iPhone 16 после тяжёлых повреждений" loading="lazy"></div>
+        <div class="case__body">
+          <span class="tag">Восстановление после повреждений</span>
+          <h3>iPhone 16</h3>
+          <p>Телефон был сильно раздавлен: заменены дисплей, аккумулятор и корпус. Главная плата уцелела, поэтому устройство удалось вернуть. Такой ремонт стоит делать бюджетно: для данных или пока не купили новый.</p>
+          <div class="thumbs">
+            <img src="assets/iphone16-inside.jpg" alt="iPhone 16 в процессе ремонта, внутренности устройства" loading="lazy">
+            <img src="assets/iphone16-board.jpg" alt="iPhone 16, плата и шлейфы при ремонте" loading="lazy">
+          </div>
+          <div class="price"><span>бюджетное восстановление</span><b>17 600 ₽</b></div>
+        </div>
+      </article>
+
+      <article class="card case fade">
+        <div class="case__img"><img src="assets/iphone13pro.jpg" alt="iPhone 13 Pro после замены аккумулятора и дисплея" loading="lazy"></div>
+        <div class="case__body">
+          <span class="tag">Замена аккумулятора и дисплея</span>
+          <h3>iPhone 13 Pro</h3>
+          <p>Без «ошибок»: в настройках виден % ёмкости, работают TrueTone и 120 Гц. Вот из чего сложилась цена.</p>
+          <div class="calc">
+            <div><span>Дисплей JCID 120 Гц</span><b>6 260 ₽</b></div>
+            <div><span>Аккумулятор Foxconn</span><b>1 600 ₽</b></div>
+            <div><span>Защитное стекло Remax</span><b>185 ₽</b></div>
+            <div><span>Моя работа</span><b>4 000 ₽</b></div>
+          </div>
+          <div class="price"><span>полная стоимость</span><b>12 045 ₽</b></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="also fade">
+      <h3>Ещё мои работы</h3>
+      <p>Цена указана вместе с запчастью и работой.</p>
+      <ul class="table">
+        <li><div><strong>Замена дисплея</strong><span>iPhone 17 Pro Max, «сервисный оригинал» (service pack), как в официальных сервисах</span></div><b>32 500 ₽</b></li>
+        <li><div><strong>Замена материнской платы</strong><span>iPhone 13 mini</span></div><b>16 000 ₽</b></li>
+        <li><div><strong>Замена корпуса, дисплея и аккумулятора</strong><span>iPhone 12</span></div><b>13 605 ₽</b></li>
+        <li><div><strong>Бюджетное восстановление</strong><span>Samsung Galaxy A8+</span></div><b>2 810 ₽</b></li>
+        <li><div><strong>Сборка игрового компьютера</strong><span>В бюджете 120 тысяч рублей</span></div><b>120 000 ₽</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="wrap">
+    <span class="eyebrow">отзывы клиентов</span>
+    <h2>Что говорят <em>после ремонта</em></h2>
+    <div class="rating fade">
+      <strong>5,0</strong>
+      <div>
+        <div class="stars" aria-label="Пять звёзд из пяти">★★★★★</div>
+        <small>761 отзыв на Авито · «Надёжный продавец»</small>
+      </div>
+    </div>
+
+    <div class="reviews">
+      <blockquote class="rev fade"><div class="stars">★★★★★</div><p>«Обратился с заменой аккумулятора на iPhone 13. Леонид всё сделал быстро, качественно и по хорошей цене. Всем советую.»</p><footer><b>Вячеслав</b> · клиент Авито</footer></blockquote>
+      <blockquote class="rev fade"><div class="stars">★★★★★</div><p>«Очень оперативно заменил мне стекло на камере телефона, в день, даже в час обращения. Приятный молодой человек, ремонтом довольна.»</p><footer><b>Елена</b> · клиент Авито</footer></blockquote>
+      <blockquote class="rev fade"><div class="stars">★★★★★</div><p>«Заранее договорились о встрече. Телефон сделали быстро, бонусом почистили.»</p><footer><b>Денис</b> · замена аккумулятора на iPhone 13</footer></blockquote>
+      <blockquote class="rev fade"><div class="stars">★★★★★</div><p>«Мастер своего дела, просто человек с большой буквы.»</p><footer><b>Амир</b> · клиент Авито</footer></blockquote>
+      <blockquote class="rev fade"><div class="stars">★★★★★</div><p>«Все супер, мастер быстро взял в работу телефон, всё сделал быстро и качественно. Рекомендую.»</p><footer><b>Диана</b> · клиент Авито</footer></blockquote>
+      <blockquote class="rev fade"><div class="stars">★★★★★</div><p>«Обратился с заменой аккумулятора на Samsung S23 Ultra. Поменяли. Единственное: на время ожидания придётся где-то подождать неподалёку, это не салон.»</p><footer><b>Михаил</b> · клиент Авито</footer></blockquote>
+    </div>
+    <p class="src">Отзывы взяты с моего профиля на Авито, <a href="https://www.avito.ru/brands/i23827971/all?sellerId=81f7a26d4c2584aa785193dbde39ad6a" target="_blank" rel="noopener">смотреть все 761</a>.</p>
+  </div>
+</section>
+
+<section class="section contacts" id="contacts">
+  <div class="wrap">
+    <span class="eyebrow">контакты</span>
+    <h2>Звоните или пишите, отвечу быстро</h2>
+    <p class="lead lead--wide">Обычно отвечаю за полчаса. Не ответил? Напишите ещё раз.</p>
+    <div class="cgrid">
+      <div class="cbox">
+        <h3>Связаться</h3>
+        <a class="big" href="tel:+79219245421">+7 921 924-54-21</a>
+        <p>Звонок или сообщение</p>
+        <div class="links">
+          <a href="tel:+79219245421">Позвонить</a>
+          <a href="https://t.me/XliveJam" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://www.avito.ru/brands/i23827971/all?sellerId=81f7a26d4c2584aa785193dbde39ad6a" target="_blank" rel="noopener">Авито</a>
+          <a href="https://vk.ru/pigeon_service" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+      <div class="cbox">
+        <h3>Мастерская</h3>
+        <p><b>Санкт-Петербург, ул. Композиторов, 33/5</b></p>
+        <p>Метро: Проспект Просвещения, Озерки, Парнас</p>
+        <p>Приём по договорённости, без выезда по городу</p>
+        <div class="links"><a href="https://yandex.ru/maps/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%BE%D0%B2%2033%2F5" target="_blank" rel="noopener">Открыть на карте</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Pigeon Service · Леонид, частный мастер, Санкт-Петербург</span>
+    <span>Сайт сделан <a href="https://t.me/milyy_gg" target="_blank" rel="noopener">Михаилом Милосердовым</a></span>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn--main" href="tel:+79219245421">Позвонить</a>
+  <a class="btn btn--blue" href="https://t.me/XliveJam" target="_blank" rel="noopener">Telegram</a>
+</div>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.fade');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
