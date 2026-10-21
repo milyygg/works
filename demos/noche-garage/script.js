@@ -17,12 +17,28 @@ document.querySelector('#copy').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText(message.value); status.textContent = 'Текст скопирован. Это демонстрация, реальная заявка не создается.'; }
   catch { message.focus(); message.select(); status.textContent = 'Текст выделен. Его можно скопировать вручную.'; }
 });
-document.querySelectorAll('.service-list details').forEach(detail => detail.addEventListener('toggle', () => {
-  if (!detail.open) return;
-  document.querySelectorAll('.service-list details').forEach(other => { if (other !== detail) other.open = false; });
-  const image = document.querySelector('#service-image'); image.src = `assets/${detail.dataset.image}.webp`; image.alt = detail.dataset.alt;
+const serviceOptions = [...document.querySelectorAll('.service-list details')];
+const serviceImages = [...document.querySelectorAll('[data-service-photo]')];
+const serviceFrame = document.querySelector('.service-frames');
+Promise.all(serviceImages.map(image => image.decode().catch(() => {}))).then(() => {
+  serviceFrame.dataset.imagesReady = 'true';
+});
+function selectService(detail) {
+  serviceOptions.forEach(option => { if (option.open !== (option === detail)) option.open = option === detail; });
+  serviceImages.forEach(image => {
+    const active = image.dataset.servicePhoto === detail.dataset.image;
+    image.classList.toggle('is-active', active);
+    image.setAttribute('aria-hidden', String(!active));
+  });
   document.querySelector('#service-caption').textContent = `${detail.querySelector('summary').childNodes[0].textContent.trim()}. Иллюстрация создана ИИ.`;
-}));
+}
+serviceOptions.forEach(detail => {
+  detail.querySelector('summary').addEventListener('click', event => {
+    event.preventDefault();
+    selectService(detail);
+  });
+  detail.addEventListener('toggle', () => { if (detail.open) selectService(detail); });
+});
 const dialog = document.querySelector('#photo-dialog');
 let photoTrigger;
 document.querySelectorAll('[data-photo]').forEach(button => button.addEventListener('click', () => {

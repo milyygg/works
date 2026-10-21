@@ -23,3 +23,11 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 .hero h1{font-family:Manrope,sans-serif;font-size:clamp(44px,8.4vw,128px);font-weight:800;letter-spacing:-.06em}.brand span{font-size:20px;font-weight:800}@media(max-width:600px){.hero h1{font-size:10.8vw}.brand span{font-size:16px}}
+
+/* Decoded image layers switch immediately without a new download or layout change. */
+.service-frames{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--surface)}
+.service-frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none}
+.service-frames img.is-active{opacity:1}
+.service-list{overflow-anchor:none}
+.service-photo>p{min-height:3.3em}
+.service-list summary span{transition:none}

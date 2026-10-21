@@ -1,0 +1,20 @@
+.motion-control{display:inline-flex;background:transparent;color:var(--muted);font:inherit;font-size:14px;border:0;padding:10px 0;cursor:pointer;min-height:44px;text-decoration:underline;text-underline-offset:5px}
+.motion-control:disabled{cursor:default;text-decoration:none}
+@media(prefers-reduced-motion:no-preference){
+ @supports(animation-timeline:view()){
+  html:not([data-motion=off]) .project{animation:project-lift linear both;animation-timeline:view();animation-range:entry 0% entry 76%;transform-origin:50% 85%}
+  html:not([data-motion=off]) .project:nth-child(even){animation-name:project-lift-right}
+  @keyframes project-lift{from{opacity:.32;transform:translate3d(-24px,110px,0) rotate(-1.2deg) scale(.955)}to{opacity:1;transform:none}}
+  @keyframes project-lift-right{from{opacity:.32;transform:translate3d(24px,110px,0) rotate(1.2deg) scale(.955)}to{opacity:1;transform:none}}
+ }
+ @media(max-width:700px){
+  @keyframes project-lift{from{opacity:.4;transform:translate3d(0,65px,0) scale(.96)}to{opacity:1;transform:none}}
+  @keyframes project-lift-right{from{opacity:.4;transform:translate3d(0,65px,0) scale(.96)}to{opacity:1;transform:none}}
+ }
+}
+.project:focus-within{animation:none!important;opacity:1!important;transform:none!important}
+html[data-motion=off] *,html[data-motion=off] *::before,html[data-motion=off] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html[data-motion=off] .project{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.project{animation:none!important;transform:none!important;opacity:1!important}}
+
+.motion-control[hidden]{display:none}
