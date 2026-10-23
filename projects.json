@@ -16,8 +16,8 @@
     "kind": "Интерактивный сайт",
     "status": "Демонстрационный проект",
     "description": "Напитки под настроение: смена вкусов, каталог, корзина, две темы и два языка.",
-    "path": "demos/sippop/",
-    "image": "assets/previews/sippop.webp"
+    "path": "https://milyygg.github.io/sippop/",
+    "image": "assets/previews/sippop-updated.webp"
   },
   {
     "id": "pigeon-service",
@@ -37,7 +37,7 @@
     "status": "Демонстрационный проект",
     "description": "Цветочная студия: выбор букета, фильтры, корзина и пример оформления заказа.",
     "path": "demos/fleur/",
-    "image": "assets/previews/fleur.webp"
+    "image": "assets/previews/fleur-updated.webp"
   },
   {
     "id": "last-signal",
