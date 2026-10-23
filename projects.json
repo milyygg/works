@@ -1,5 +1,15 @@
 [
   {
+    "id": "lume-candles",
+    "title": "LUMÉ CANDLES",
+    "category": "sites",
+    "kind": "Каталог с корзиной",
+    "status": "Для клиента",
+    "description": "Свечи ручной работы: коллекция, выбор параметров изделия, корзина и подготовка заказа для отправки в Telegram.",
+    "path": "https://milyygg.github.io/lume-candles/",
+    "image": "assets/previews/lume-candles.webp"
+  },
+  {
     "id": "sippop",
     "title": "SIPPOP!",
     "category": "sites",
@@ -100,4 +110,3 @@
     "image": "assets/previews/logos.webp"
   }
 ]
-

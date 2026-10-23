@@ -10,7 +10,8 @@ for (const project of projects) {
   if(ids.has(project.id)) throw new Error(`Duplicate project: ${project.id}`);
   ids.add(project.id);
   if (!['sites', 'mini', 'graphics'].includes(project.category)) throw new Error(`Unknown category: ${project.category}`);
-  for(const key of ['path', 'image']) {
+  const externalSite = project.path.startsWith('https://milyygg.github.io/');
+  for(const key of (externalSite ? ['image'] : ['path', 'image'])) {
     if(project[key].startsWith('/') || project[key].includes('..') || project[key].includes(':')) throw new Error(`Expected relative ${key}`);
   }
 }
