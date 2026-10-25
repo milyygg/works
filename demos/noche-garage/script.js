@@ -33,6 +33,12 @@ function selectService(detail) {
   document.querySelector('#service-caption').textContent = `${detail.querySelector('summary').childNodes[0].textContent.trim()}. Иллюстрация создана ИИ.`;
 }
 serviceOptions.forEach(detail => {
+  const original = serviceImages.find(image => image.dataset.servicePhoto === detail.dataset.image);
+  const photo = original.cloneNode();
+  photo.removeAttribute('data-service-photo');
+  photo.removeAttribute('aria-hidden');
+  photo.className = 'service-inline-photo';
+  detail.querySelector('.service-content').prepend(photo);
   detail.querySelector('summary').addEventListener('click', event => {
     event.preventDefault();
     selectService(detail);
@@ -52,3 +58,5 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
   const observer = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting){entry.target.classList.add('reveal');observer.unobserve(entry.target);} }), {threshold:.12});
   document.querySelectorAll('.section-heading, .light-photo, .service-photo, .request-output, .contact-info').forEach(element => observer.observe(element));
 }
+
+prepareMessage();
