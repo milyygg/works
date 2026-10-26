@@ -1,5 +1,15 @@
 [
   {
+    "id": "brilliant-shop",
+    "title": "Brilliant shop",
+    "category": "sites",
+    "kind": "Каталог с корзиной",
+    "status": "Демонстрационная версия",
+    "description": "Вышивка, бисер и материалы для творчества: категории, поиск, варианты товаров, избранное и демонстрационная корзина.",
+    "path": "https://milyygg.github.io/brilliant-shop/",
+    "image": "assets/previews/brilliant-shop.webp"
+  },
+  {
     "id": "lume-candles",
     "title": "LUMÉ CANDLES",
     "category": "sites",
