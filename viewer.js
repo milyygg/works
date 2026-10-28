@@ -7,11 +7,12 @@ const caption = document.querySelector('#caption');
 const original = document.querySelector('#original');
 const thumbs = [...document.querySelectorAll('[data-index]')];
 const cache = new Map();
-function preload(index) {
+function preload(index, priority = 'low') {
   const item = items[(index + items.length) % items.length];
   const source = item.display || item.image;
   if (!cache.has(source)) {
     const image = new Image();
+    image.fetchPriority = priority;
     image.src = source;
     cache.set(source, image);
   }
@@ -22,20 +23,31 @@ function show(index) {
   const selected = current;
   const token = ++request;
   const item = items[selected];
-  const image = preload(selected);
-  // Show a lightweight thumbnail immediately while the full display version loads.
-  artwork.src = image.complete && image.naturalWidth ? image.src : (item.thumbnail || image.src);
-  artwork.alt = item.title;
+  const image = preload(selected, 'high');
+  const label = `${selected + 1} / ${items.length} · ${item.title}`;
   original.href = item.image;
-  caption.textContent = `${selected + 1} / ${items.length} · ${item.title}`;
   thumbs.forEach((link,i) => link.setAttribute('aria-current', String(i === selected)));
   history.replaceState(null, '', `#${selected + 1}`);
-  image.onload = () => { if (token === request) artwork.src = image.src; };
-  image.onerror = () => {
-    if (token === request) caption.textContent += ' · Не удалось загрузить изображение. Откройте оригинал.';
-  };
-  preload(selected + 1);
-  preload(selected - 1);
+  function ready() {
+    if (token !== request) return;
+    artwork.src = image.src;
+    artwork.alt = item.title;
+    stage.setAttribute('aria-busy', 'false');
+    caption.textContent = label;
+    preload(selected + 1);
+    preload(selected - 1);
+  }
+  stage.setAttribute('aria-busy', 'true');
+  caption.textContent = label + ' · Загрузка…';
+  if (image.complete && image.naturalWidth) ready();
+  else {
+    image.onload = ready;
+    image.onerror = () => {
+      if (token !== request) return;
+      stage.setAttribute('aria-busy', 'false');
+      caption.textContent = label + ' · Не удалось загрузить. Откройте оригинал.';
+    };
+  }
 }
 for (const link of thumbs) link.addEventListener('click', event => {
   if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
