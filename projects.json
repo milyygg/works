@@ -107,7 +107,9 @@
     "status": "Дизайн",
     "description": "Товарная инфографика в разных стилях: техника, товары для дома, одежда и аксессуары.",
     "path": "demos/product-cards/",
-    "image": "assets/previews/graphics-product-cards.webp"
+    "image": "assets/previews/graphics-product-cards.webp",
+    "imageWidth": 1050,
+    "imageHeight": 1400
   },
   {
     "id": "logos",
@@ -117,7 +119,9 @@
     "status": "Дизайн",
     "description": "Логотипы и примеры фирменного оформления для разных направлений бизнеса.",
     "path": "demos/logos/",
-    "image": "assets/previews/graphics-logos.webp"
+    "image": "assets/previews/graphics-logos.webp",
+    "imageWidth": 1254,
+    "imageHeight": 1254
   },
   {
     "id": "product-series",
@@ -127,7 +131,9 @@
     "status": "Дизайн",
     "path": "demos/product-series/",
     "image": "assets/previews/graphics-product-series.webp",
-    "description": "Шесть слайдов одной карточки: главное фото, детали, материалы, размеры, использование и уход."
+    "description": "Шесть слайдов одной карточки: главное фото, детали, материалы, размеры, использование и уход.",
+    "imageWidth": 1050,
+    "imageHeight": 1400
   },
   {
     "id": "avito-cards",
@@ -137,7 +143,9 @@
     "status": "Дизайн",
     "path": "demos/avito-cards/",
     "image": "assets/previews/graphics-avito-cards.webp",
-    "description": "Подборка работ: карточки для авито."
+    "description": "Подборка работ: карточки для авито.",
+    "imageWidth": 1400,
+    "imageHeight": 1050
   },
   {
     "id": "flyers",
@@ -147,7 +155,9 @@
     "status": "Дизайн",
     "path": "demos/flyers/",
     "image": "assets/previews/graphics-flyers.webp",
-    "description": "Подборка работ: листовки."
+    "description": "Подборка работ: листовки.",
+    "imageWidth": 1050,
+    "imageHeight": 1400
   },
   {
     "id": "business-cards",
@@ -157,7 +167,9 @@
     "status": "Дизайн",
     "path": "demos/business-cards/",
     "image": "assets/previews/graphics-business-cards.webp",
-    "description": "Подборка работ: визитки."
+    "description": "Подборка работ: визитки.",
+    "imageWidth": 1400,
+    "imageHeight": 1050
   },
   {
     "id": "banners",
@@ -167,7 +179,9 @@
     "status": "Дизайн",
     "path": "demos/banners/",
     "image": "assets/previews/graphics-banners.webp",
-    "description": "Подборка работ: баннеры."
+    "description": "Подборка работ: баннеры.",
+    "imageWidth": 1400,
+    "imageHeight": 788
   },
   {
     "id": "social-print",
@@ -177,6 +191,8 @@
     "status": "Дизайн",
     "path": "demos/social-print/",
     "image": "assets/previews/graphics-social-print.webp",
-    "description": "Подборка работ: сертификаты и посты."
+    "description": "Подборка работ: сертификаты и посты.",
+    "imageWidth": 1400,
+    "imageHeight": 1050
   }
 ]
