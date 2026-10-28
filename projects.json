@@ -105,9 +105,9 @@
     "category": "graphics",
     "kind": "Товарная инфографика",
     "status": "Дизайн",
-    "description": "Оформление товаров для маркетплейсов. Пять новых работ в одном просмотрщике.",
+    "description": "Товарная инфографика в разных стилях: техника, товары для дома, одежда и аксессуары.",
     "path": "demos/product-cards/",
-    "image": "assets/previews/product-cards.webp"
+    "image": "assets/previews/graphics-product-cards.webp"
   },
   {
     "id": "logos",
@@ -115,8 +115,68 @@
     "category": "graphics",
     "kind": "Фирменная графика",
     "status": "Дизайн",
-    "description": "Nexus Cybernetics, Aura Botanica, Find Me и Online Store. Каждый логотип можно рассмотреть отдельно.",
+    "description": "Логотипы и примеры фирменного оформления для разных направлений бизнеса.",
     "path": "demos/logos/",
-    "image": "assets/previews/logos.webp"
+    "image": "assets/previews/graphics-logos.webp"
+  },
+  {
+    "id": "product-series",
+    "title": "Карточка товара под ключ",
+    "category": "graphics",
+    "kind": "Графический дизайн",
+    "status": "Дизайн",
+    "path": "demos/product-series/",
+    "image": "assets/previews/graphics-product-series.webp",
+    "description": "Шесть слайдов одной карточки: главное фото, детали, материалы, размеры, использование и уход."
+  },
+  {
+    "id": "avito-cards",
+    "title": "Карточки для Авито",
+    "category": "graphics",
+    "kind": "Графический дизайн",
+    "status": "Дизайн",
+    "path": "demos/avito-cards/",
+    "image": "assets/previews/graphics-avito-cards.webp",
+    "description": "Подборка работ: карточки для авито."
+  },
+  {
+    "id": "flyers",
+    "title": "Листовки",
+    "category": "graphics",
+    "kind": "Графический дизайн",
+    "status": "Дизайн",
+    "path": "demos/flyers/",
+    "image": "assets/previews/graphics-flyers.webp",
+    "description": "Подборка работ: листовки."
+  },
+  {
+    "id": "business-cards",
+    "title": "Визитки",
+    "category": "graphics",
+    "kind": "Графический дизайн",
+    "status": "Дизайн",
+    "path": "demos/business-cards/",
+    "image": "assets/previews/graphics-business-cards.webp",
+    "description": "Подборка работ: визитки."
+  },
+  {
+    "id": "banners",
+    "title": "Баннеры",
+    "category": "graphics",
+    "kind": "Графический дизайн",
+    "status": "Дизайн",
+    "path": "demos/banners/",
+    "image": "assets/previews/graphics-banners.webp",
+    "description": "Подборка работ: баннеры."
+  },
+  {
+    "id": "social-print",
+    "title": "Сертификаты и посты",
+    "category": "graphics",
+    "kind": "Графический дизайн",
+    "status": "Дизайн",
+    "path": "demos/social-print/",
+    "image": "assets/previews/graphics-social-print.webp",
+    "description": "Подборка работ: сертификаты и посты."
   }
 ]

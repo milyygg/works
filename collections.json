@@ -5,23 +5,128 @@
     "images": [
       {
         "title": "Микрофон",
-        "image": "assets/graphics/card-microphone-2026.png"
+        "image": "assets/graphics/card-microphone-2026.png",
+        "thumbnail": "assets/previews/product-cards-1-thumb.webp"
       },
       {
         "title": "Наушники",
-        "image": "assets/graphics/card-headphones-2026.png"
+        "image": "assets/graphics/card-headphones-2026.png",
+        "thumbnail": "assets/previews/product-cards-2-thumb.webp"
       },
       {
         "title": "Кувшин",
-        "image": "assets/graphics/card-pitcher-2026.png"
+        "image": "assets/graphics/card-pitcher-2026.png",
+        "thumbnail": "assets/previews/product-cards-3-thumb.webp"
       },
       {
         "title": "Носки",
-        "image": "assets/graphics/card-socks-2026.png"
+        "image": "assets/graphics/card-socks-2026.png",
+        "thumbnail": "assets/previews/product-cards-4-thumb.webp"
       },
       {
         "title": "Солнцезащитный крем",
-        "image": "assets/graphics/card-sunscreen-2026.png"
+        "image": "assets/graphics/card-sunscreen-2026.png",
+        "thumbnail": "assets/previews/product-cards-5-thumb.webp"
+      },
+      {
+        "title": "Фен",
+        "image": "assets/graphics/product-cards/01-hairdryer.png",
+        "thumbnail": "assets/previews/product-cards-6-thumb.webp"
+      },
+      {
+        "title": "Кофемолка",
+        "image": "assets/graphics/product-cards/02-coffee-grinder.png",
+        "thumbnail": "assets/previews/product-cards-7-thumb.webp"
+      },
+      {
+        "title": "Кресло",
+        "image": "assets/graphics/product-cards/03-chair.png",
+        "thumbnail": "assets/previews/product-cards-8-thumb.webp"
+      },
+      {
+        "title": "Щётка для животных",
+        "image": "assets/graphics/product-cards/04-pet-brush.png",
+        "thumbnail": "assets/previews/product-cards-9-thumb.webp"
+      },
+      {
+        "title": "Рюкзак",
+        "image": "assets/graphics/product-cards/05-backpack.png",
+        "thumbnail": "assets/previews/product-cards-10-thumb.webp"
+      },
+      {
+        "title": "Блендер",
+        "image": "assets/graphics/product-cards/06-blender.png",
+        "thumbnail": "assets/previews/product-cards-11-thumb.webp"
+      },
+      {
+        "title": "Лампа",
+        "image": "assets/graphics/product-cards/07-lamp.png",
+        "thumbnail": "assets/previews/product-cards-12-thumb.webp"
+      },
+      {
+        "title": "Керамические миски",
+        "image": "assets/graphics/product-cards/08-bowls.png",
+        "thumbnail": "assets/previews/product-cards-13-thumb.webp"
+      },
+      {
+        "title": "Фитнес-резинки",
+        "image": "assets/graphics/product-cards/09-fitness.png",
+        "thumbnail": "assets/previews/product-cards-14-thumb.webp"
+      },
+      {
+        "title": "Органайзер",
+        "image": "assets/graphics/product-cards/10-organizer.png",
+        "thumbnail": "assets/previews/product-cards-15-thumb.webp"
+      },
+      {
+        "title": "Проектор",
+        "image": "assets/graphics/product-cards/11-projector.png",
+        "thumbnail": "assets/previews/product-cards-16-thumb.webp"
+      },
+      {
+        "title": "Сыворотка",
+        "image": "assets/graphics/product-cards/12-serum.png",
+        "thumbnail": "assets/previews/product-cards-17-thumb.webp"
+      },
+      {
+        "title": "Кроссовки",
+        "image": "assets/graphics/product-cards/13-sneakers.png",
+        "thumbnail": "assets/previews/product-cards-18-thumb.webp"
+      },
+      {
+        "title": "Чайник",
+        "image": "assets/graphics/product-cards/14-kettle.png",
+        "thumbnail": "assets/previews/product-cards-19-thumb.webp"
+      },
+      {
+        "title": "Шуруповёрт",
+        "image": "assets/graphics/product-cards/15-drill.png",
+        "thumbnail": "assets/previews/product-cards-20-thumb.webp"
+      },
+      {
+        "title": "Вафельница",
+        "image": "assets/graphics/product-cards/16-wafflemaker.png",
+        "thumbnail": "assets/previews/product-cards-21-thumb.webp"
+      },
+      {
+        "title": "Деревянный конструктор",
+        "image": "assets/graphics/product-cards/17-blocks.png",
+        "thumbnail": "assets/previews/product-cards-22-thumb.webp"
+      },
+      {
+        "title": "Постельное бельё",
+        "image": "assets/graphics/product-cards/18-bedding.png",
+        "thumbnail": "assets/previews/product-cards-23-thumb.webp"
+      },
+      {
+        "title": "Чемодан",
+        "image": "assets/graphics/product-cards/19-suitcase.png",
+        "thumbnail": "assets/previews/product-cards-24-thumb.webp"
+      },
+      {
+        "title": "Колонка",
+        "image": "assets/graphics/product-cards/20-speaker.png",
+        "thumbnail": "assets/previews/product-cards-25-thumb.webp"
       }
     ]
   },
@@ -31,19 +136,239 @@
     "images": [
       {
         "title": "Nexus Cybernetics",
-        "image": "assets/graphics/logo-nexus.jpg"
+        "image": "assets/graphics/logo-nexus.jpg",
+        "thumbnail": "assets/previews/logos-1-thumb.webp"
       },
       {
         "title": "Aura Botanica",
-        "image": "assets/graphics/logo-aura.jpg"
+        "image": "assets/graphics/logo-aura.jpg",
+        "thumbnail": "assets/previews/logos-2-thumb.webp"
       },
       {
         "title": "Find Me",
-        "image": "assets/graphics/logo-findme.jpg"
+        "image": "assets/graphics/logo-findme.jpg",
+        "thumbnail": "assets/previews/logos-3-thumb.webp"
       },
       {
         "title": "Online Store",
-        "image": "assets/graphics/logo-onlinestore.jpg"
+        "image": "assets/graphics/logo-onlinestore.jpg",
+        "thumbnail": "assets/previews/logos-4-thumb.webp"
+      },
+      {
+        "title": "КРОШКА & КОРКА",
+        "image": "assets/graphics/logos/01-bakery.png",
+        "thumbnail": "assets/previews/logos-5-thumb.webp"
+      },
+      {
+        "title": "ХВОСТИК",
+        "image": "assets/graphics/logos/02-pet.png",
+        "thumbnail": "assets/previews/logos-6-thumb.webp"
+      },
+      {
+        "title": "ОСЬ",
+        "image": "assets/graphics/logos/03-architecture.png",
+        "thumbnail": "assets/previews/logos-7-thumb.webp"
+      },
+      {
+        "title": "ТИХОЕ УТРО",
+        "image": "assets/graphics/logos/04-coffee.png",
+        "thumbnail": "assets/previews/logos-8-thumb.webp"
+      },
+      {
+        "title": "ЦВЕТ И ФОРМА",
+        "image": "assets/graphics/logos/05-flowers.png",
+        "thumbnail": "assets/previews/logos-9-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": "product-series",
+    "title": "Карточка товара под ключ",
+    "images": [
+      {
+        "title": "Термокружка: главное фото",
+        "image": "assets/graphics/product-series/01-main.png",
+        "thumbnail": "assets/previews/product-series-1-thumb.webp"
+      },
+      {
+        "title": "Термокружка: крышка",
+        "image": "assets/graphics/product-series/02-lid.png",
+        "thumbnail": "assets/previews/product-series-2-thumb.webp"
+      },
+      {
+        "title": "Термокружка: материалы",
+        "image": "assets/graphics/product-series/03-materials.png",
+        "thumbnail": "assets/previews/product-series-3-thumb.webp"
+      },
+      {
+        "title": "Термокружка: размеры",
+        "image": "assets/graphics/product-series/04-size.png",
+        "thumbnail": "assets/previews/product-series-4-thumb.webp"
+      },
+      {
+        "title": "Термокружка: использование",
+        "image": "assets/graphics/product-series/05-use.png",
+        "thumbnail": "assets/previews/product-series-5-thumb.webp"
+      },
+      {
+        "title": "Термокружка: уход",
+        "image": "assets/graphics/product-series/06-care.png",
+        "thumbnail": "assets/previews/product-series-6-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": "avito-cards",
+    "title": "Карточки для Авито",
+    "images": [
+      {
+        "title": "Клининг",
+        "image": "assets/graphics/avito-cards/01-cleaning.png",
+        "thumbnail": "assets/previews/avito-cards-1-thumb.webp"
+      },
+      {
+        "title": "Мебель",
+        "image": "assets/graphics/avito-cards/02-furniture.png",
+        "thumbnail": "assets/previews/avito-cards-2-thumb.webp"
+      },
+      {
+        "title": "Репетитор",
+        "image": "assets/graphics/avito-cards/03-tutor.png",
+        "thumbnail": "assets/previews/avito-cards-3-thumb.webp"
+      },
+      {
+        "title": "Ремонт",
+        "image": "assets/graphics/avito-cards/04-repair.png",
+        "thumbnail": "assets/previews/avito-cards-4-thumb.webp"
+      },
+      {
+        "title": "Флористика",
+        "image": "assets/graphics/avito-cards/05-florist.png",
+        "thumbnail": "assets/previews/avito-cards-5-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": "flyers",
+    "title": "Листовки",
+    "images": [
+      {
+        "title": "Пекарня",
+        "image": "assets/graphics/flyers/01-bakery.png",
+        "thumbnail": "assets/previews/flyers-1-thumb.webp"
+      },
+      {
+        "title": "Керамическая мастерская",
+        "image": "assets/graphics/flyers/02-pottery.png",
+        "thumbnail": "assets/previews/flyers-2-thumb.webp"
+      },
+      {
+        "title": "Клининг",
+        "image": "assets/graphics/flyers/03-cleaning.png",
+        "thumbnail": "assets/previews/flyers-3-thumb.webp"
+      },
+      {
+        "title": "Книжный клуб",
+        "image": "assets/graphics/flyers/04-bookclub.png",
+        "thumbnail": "assets/previews/flyers-4-thumb.webp"
+      },
+      {
+        "title": "Магазин растений",
+        "image": "assets/graphics/flyers/05-plantshop.png",
+        "thumbnail": "assets/previews/flyers-5-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": "business-cards",
+    "title": "Визитки",
+    "images": [
+      {
+        "title": "Детейлинг",
+        "image": "assets/graphics/business-cards/01-detailing.png",
+        "thumbnail": "assets/previews/business-cards-1-thumb.webp"
+      },
+      {
+        "title": "Керамист",
+        "image": "assets/graphics/business-cards/02-ceramist.png",
+        "thumbnail": "assets/previews/business-cards-2-thumb.webp"
+      },
+      {
+        "title": "Архитектор",
+        "image": "assets/graphics/business-cards/03-architect.png",
+        "thumbnail": "assets/previews/business-cards-3-thumb.webp"
+      },
+      {
+        "title": "Флорист",
+        "image": "assets/graphics/business-cards/04-florist.png",
+        "thumbnail": "assets/previews/business-cards-4-thumb.webp"
+      },
+      {
+        "title": "Уход за животными",
+        "image": "assets/graphics/business-cards/05-petcare.png",
+        "thumbnail": "assets/previews/business-cards-5-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": "banners",
+    "title": "Баннеры",
+    "images": [
+      {
+        "title": "Кофе",
+        "image": "assets/graphics/banners/01-coffee.png",
+        "thumbnail": "assets/previews/banners-1-thumb.webp"
+      },
+      {
+        "title": "Интерьер",
+        "image": "assets/graphics/banners/02-interior.png",
+        "thumbnail": "assets/previews/banners-2-thumb.webp"
+      },
+      {
+        "title": "Обучение",
+        "image": "assets/graphics/banners/03-course.png",
+        "thumbnail": "assets/previews/banners-3-thumb.webp"
+      },
+      {
+        "title": "Товары для животных",
+        "image": "assets/graphics/banners/04-pets.png",
+        "thumbnail": "assets/previews/banners-4-thumb.webp"
+      },
+      {
+        "title": "Цветы",
+        "image": "assets/graphics/banners/05-flowers.png",
+        "thumbnail": "assets/previews/banners-5-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": "social-print",
+    "title": "Сертификаты и посты",
+    "images": [
+      {
+        "title": "Сертификат в керамическую мастерскую",
+        "image": "assets/graphics/social-print/01-certificate.png",
+        "thumbnail": "assets/previews/social-print-1-thumb.webp"
+      },
+      {
+        "title": "Цветочный сертификат",
+        "image": "assets/graphics/social-print/02-flowers-certificate.png",
+        "thumbnail": "assets/previews/social-print-2-thumb.webp"
+      },
+      {
+        "title": "Пост для кафе",
+        "image": "assets/graphics/social-print/03-social-cafe.png",
+        "thumbnail": "assets/previews/social-print-3-thumb.webp"
+      },
+      {
+        "title": "Пост керамической мастерской",
+        "image": "assets/graphics/social-print/04-social-ceramics.png",
+        "thumbnail": "assets/previews/social-print-4-thumb.webp"
+      },
+      {
+        "title": "Афиша события",
+        "image": "assets/graphics/social-print/05-event-flyer.png",
+        "thumbnail": "assets/previews/social-print-5-thumb.webp"
       }
     ]
   }
