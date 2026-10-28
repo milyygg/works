@@ -16,7 +16,9 @@ function preload(index, priority = 'low') {
     image.src = source;
     cache.set(source, image);
   }
-  return cache.get(source);
+  const image = cache.get(source);
+  if (priority === 'high') image.fetchPriority = 'high';
+  return image;
 }
 function show(index) {
   current = (index + items.length) % items.length;
@@ -25,6 +27,8 @@ function show(index) {
   const item = items[selected];
   const image = preload(selected, 'high');
   const label = `${selected + 1} / ${items.length} · ${item.title}`;
+  artwork.style.visibility = 'hidden';
+  artwork.alt = item.title;
   original.href = item.image;
   thumbs.forEach((link,i) => link.setAttribute('aria-current', String(i === selected)));
   history.replaceState(null, '', `#${selected + 1}`);
@@ -32,6 +36,7 @@ function show(index) {
     if (token !== request) return;
     artwork.src = image.src;
     artwork.alt = item.title;
+    artwork.style.visibility = 'visible';
     stage.setAttribute('aria-busy', 'false');
     caption.textContent = label;
     preload(selected + 1);
