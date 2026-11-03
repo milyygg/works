@@ -11,7 +11,7 @@ function setSplit(value) {
   divider.style.left = `${split}%`;
   handle.style.left = `${Math.max(7,Math.min(93,split))}%`;
   handle.setAttribute('aria-valuenow',Math.round(split));
-  handle.setAttribute('aria-valuetext',`До: ${Math.round(split)} процентов; после: ${100-Math.round(split)} процентов`);
+  handle.setAttribute('aria-valuetext',window.portfolioLanguage?.language === 'en' ? `Before: ${Math.round(split)} percent; after: ${100-Math.round(split)} percent` : `До: ${Math.round(split)} процентов; после: ${100-Math.round(split)} процентов`);
 }
 function moveSplit(event) {
   const rect = comparison.getBoundingClientRect();
@@ -33,10 +33,16 @@ document.querySelectorAll('[data-service]').forEach(button => button.addEventLis
   document.getElementById('request').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
   item.focus({preventScroll:true});
 }));
+function prepareMessage() {
+  const details = document.getElementById('details').value.trim();
+  document.getElementById('message').value = window.portfolioLanguage?.language === 'en'
+    ? `Hello! I'd like to discuss a repair. Item: ${window.portfolioLanguage.translate(item.value).toLowerCase()}. ${details ? details.replace(/[.!?]*$/, '.') : "I'll send photos in our conversation."} Could you let me know whether it can be restored and the estimated cost?`
+    : `Здравствуйте! Хочу обсудить ремонт. Вещь: ${item.value.toLowerCase()}. ${details ? details.replace(/[.!?]*$/, '.') : 'Пришлю фотографии в переписке.'} Подскажите, пожалуйста, можно ли восстановить и какая будет предварительная стоимость?`;
+}
+window.addEventListener('portfolio:language',()=>{setSplit(split);if(!document.getElementById('result').hidden)prepareMessage();});
 document.getElementById('request-form').addEventListener('submit', event => {
   event.preventDefault();
-  const details = document.getElementById('details').value.trim();
-  document.getElementById('message').value = `Здравствуйте! Хочу обсудить ремонт. Вещь: ${item.value.toLowerCase()}. ${details ? details.replace(/[.!?]*$/, '.') : 'Пришлю фотографии в переписке.'} Подскажите, пожалуйста, можно ли восстановить и какая будет предварительная стоимость?`;
+  prepareMessage();
   document.getElementById('result').hidden = false;
   document.getElementById('message').focus();
 });

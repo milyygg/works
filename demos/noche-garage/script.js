@@ -1,12 +1,16 @@
 const form = document.querySelector('#request-form');
 const message = document.querySelector('#message');
 const status = document.querySelector('#copy-status');
+const english = () => window.portfolioLanguage?.language === 'en';
 function prepareMessage() {
   const car = form.elements.car.value.trim();
   const services = [...form.querySelectorAll('input[name="service"]:checked')].map(input => input.value);
   const comment = form.elements.comment.value.trim();
-  message.value = ['Здравствуйте! Хочу обсудить обновление автомобиля.',car ? `Автомобиль: ${car}.` : 'Марку и модель автомобиля уточню.',services.length ? `Интересует: ${services.join(', ')}.` : 'Помогите подобрать подходящий вариант.',comment ? `Пожелания: ${comment}` : '', 'Подскажите варианты, стоимость и возможность записи.'].filter(Boolean).join('\n\n');
+  message.value = english()
+    ? ["Hello! I'd like to discuss upgrading my car.", car ? `Vehicle: ${car}.` : "I'll confirm the make and model.", services.length ? `Interested in: ${services.map(value => window.portfolioLanguage.translate(value)).join(', ')}.` : 'Please help me choose a suitable option.', comment ? `Preferences: ${comment}` : '', 'Could you suggest options, pricing and availability?'].filter(Boolean).join('\n\n')
+    : ['Здравствуйте! Хочу обсудить обновление автомобиля.',car ? `Автомобиль: ${car}.` : 'Марку и модель автомобиля уточню.',services.length ? `Интересует: ${services.join(', ')}.` : 'Помогите подобрать подходящий вариант.',comment ? `Пожелания: ${comment}` : '', 'Подскажите варианты, стоимость и возможность записи.'].filter(Boolean).join('\n\n');
 }
+window.addEventListener('portfolio:language',prepareMessage);
 form.addEventListener('submit', event => { event.preventDefault(); prepareMessage(); status.textContent = 'Текст готов. Это демонстрация: сообщения не отправляются.'; });
 form.addEventListener('input', prepareMessage);
 document.querySelectorAll('[data-select]').forEach(button => button.addEventListener('click', () => {

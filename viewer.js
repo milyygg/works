@@ -7,8 +7,10 @@ const caption = document.querySelector('#caption');
 const original = document.querySelector('#original');
 const thumbs = [...document.querySelectorAll('[data-index]')];
 const cache = new Map();
+const english = () => window.portfolioLanguage?.language === 'en';
+const localized = item => ({...item, image:english() && item.imageEn || item.image, display:english() && item.displayEn || item.display, title:window.portfolioLanguage?.translate(item.title) || item.title});
 function preload(index, priority = 'low') {
-  const item = items[(index + items.length) % items.length];
+  const item = localized(items[(index + items.length) % items.length]);
   const source = item.display || item.image;
   if (!cache.has(source)) {
     const image = new Image();
@@ -24,7 +26,7 @@ function show(index) {
   current = (index + items.length) % items.length;
   const selected = current;
   const token = ++request;
-  const item = items[selected];
+  const item = localized(items[selected]);
   const image = preload(selected, 'high');
   const label = `${selected + 1} / ${items.length} · ${item.title}`;
   artwork.style.visibility = 'hidden';
@@ -43,14 +45,14 @@ function show(index) {
     preload(selected - 1);
   }
   stage.setAttribute('aria-busy', 'true');
-  caption.textContent = label + ' · Загрузка…';
+  caption.textContent = label + (english() ? ' · Loading…' : ' · Загрузка…');
   if (image.complete && image.naturalWidth) ready();
   else {
     image.onload = ready;
     image.onerror = () => {
       if (token !== request) return;
       stage.setAttribute('aria-busy', 'false');
-      caption.textContent = label + ' · Не удалось загрузить. Откройте оригинал.';
+      caption.textContent = label + (english() ? ' · Could not load. Open the original.' : ' · Не удалось загрузить. Откройте оригинал.');
     };
   }
 }
@@ -81,4 +83,5 @@ stage.addEventListener('pointerup', event => {
 });
 stage.addEventListener('pointercancel', () => { touch = null; });
 const initial = Number(location.hash.slice(1));
+window.addEventListener('portfolio:language',()=>show(current));
 show(Number.isInteger(initial) && initial >= 1 && initial <= items.length ? initial - 1 : 0);
