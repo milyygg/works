@@ -95,8 +95,8 @@
     "status": "Демонстрационная версия",
     "description": "Ремонт техники, фотографии работ и контакты в компактном формате.",
     "path": "demos/pigeon-mini/",
-    "image": "assets/previews/pigeon-mini.webp",
-    "imageEn": "assets/previews/pigeon-mini-en.webp"
+    "image": "assets/previews/pigeon-mini-paired-v3-ru.webp",
+    "imageEn": "assets/previews/pigeon-mini-paired-v3-en.webp"
   },
   {
     "id": "taplink",
@@ -106,8 +106,8 @@
     "status": "Личный проект",
     "description": "Портфолио, услуги, Telegram и социальные сети на одной странице.",
     "path": "demos/taplink/",
-    "image": "assets/previews/taplink.webp",
-    "imageEn": "assets/previews/taplink-en.webp"
+    "image": "assets/previews/taplink-paired-v3-ru.webp",
+    "imageEn": "assets/previews/taplink-paired-v3-en.webp"
   },
   {
     "id": "product-cards",
